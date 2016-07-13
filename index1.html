@@ -26,26 +26,22 @@
 			<div class="slides">
 
 				<section>
-					<h1>Meteor + React</h1>
-					<h3>JavaScript Full Stack</h3>
+					<h1>壹 </h1>
+					<h1>Introduction</h1>
 					<p>
-						<small>Created by <a href="http://jinglei.me">荆雷</a> </small>
+						<small>Created by <a href="http://jinglei.me"> &nbsp; 荆雷 &nbsp; </a> in July 2016</small>
 					</p>
 			  </section>
 
 				<section>
 					<h2>Agenda</h2>
 					<ul>
-						<li>JavaScript / Node.js (2)</li>
+						<li>Introduction (1)</li>
+						<li>JavaScript / Node.js (1)</li>
 						<li>Meteor (8)</li>
 						<li>React (6)</li>
 						<li>MongoDB</li>
 					</ul>
-			  </section>
-
-				<section>
-					<h2>壹</h2>
-					<p>JavaScript</p>
 			  </section>
 
 				<section>
@@ -78,9 +74,122 @@
 			  </section>
 
 				<section>
-					<h2>JavaScript</h2>
-					<p>JavaScript 函数式编程语言</p>
-			  </section>
+					<h1>Meteor + React</h1>
+					<h3>A Quick Look</h3>
+					<p>
+						JavaScript Full Stack
+					</p>
+				</section>
+
+				<section>
+					<img data-src="assets/code.jpg" width="320px">
+					<h2>Why Meteor ?</h2>
+					<ul>
+						<li><em>One Language</em> - JavaScript</li>
+						<li><em>Database Everywhere</em> - MiniMongo in Browser</li>
+						<li><em>Latency Compensation</em> - Optimistic Update</li>
+						<li><em>Full Stack Reactivity</em> - Auto Update</li>
+					</ul>
+				</section>
+
+				<section>
+					<img data-src="assets/gun.gif" width="260px">
+					<p> Reactivity </p>
+					<pre><code class="hljs" data-trim contenteditable>
+var Room = React.createClass({
+  mixins: [ReactMeteorData],
+  //Reactive computation
+  getMeteorData() {
+    var radius = Session.get("radius"); //Reactive source
+    var newArea = 3.14 * radius * radius;
+    return { area: newArea };
+  },
+  render() {
+    return <span>Place area: {this.data.area}!</span>;
+  }
+});
+
+...
+Session.set("radius", 10); //Reactive trigger
+...
+					</code></pre>
+				</section>
+
+				<section>
+									<h2>Cons</h2>
+									<ul>
+										<li><em>MongoDB Only</em> - SQL Supported Unofficially</li>
+										<li><em>NPM</em> - Supported Unofficially</li>
+										<li><em>SEO</em> - Needs Extra Jobs</li>
+									</ul>
+								</section>
+
+				        <section>
+									<section>
+										<h2>Blaze</h2>
+										<h2>Angular</h2>
+										<h2>React</h2>
+										<h2>?</h2>
+									</section>
+
+									<section>
+										<img data-src="assets/smallSwiss.jpg" width="260px">
+										<h2>Blaze</h2>
+										<ul >
+											<li><em>Simple</em> - Handlebar Style, Easy to Learn</li>
+											<li><em>Limit</em> - Only in Meteor</li>
+										</ul>
+									</section>
+
+									<section>
+										<img data-src="assets/bigSwiss.jpg" width="360px">
+										<h2>Angular</h2>
+										<ul >
+											<li><em>Monolithic</em> - A Complete Framework</li>
+											<li><em>Dirty Check</em> - Performance Issue</li>
+											<li><em>Bidirectional</em> - Two-way binding Could be Complicated</li>
+											<li><em>2.0 in TypeScript</em> - Serious?</li>
+										</ul>
+									</section>
+
+									<section>
+										<img data-src="assets/atwood.jpg">
+										<h2> A<span style="text-transform: lowercase">twood's</span> L<span style="text-transform: lowercase">aw</span> </h2>
+										<p> Any application that can be written in JavaScript, will eventually be written in JavaScript. </p>
+									</section>
+
+
+									<section>
+										<img data-src="assets/midSwiss.jpg" width="260px">
+										<h2>React</h2>
+										<ul>
+											<li><em>Component</em> - Decoupling / Encapsulation</li>
+											<li><em>Unidirectional Data Flow</em> - Easier to Reason</li>
+											<li><em>Reactivity</em> - Auto Update, Less Code</li>
+											<li><em>Virtual Dom</em> - Performance Improvement</li>
+										</ul>
+									</section>
+							  </section>
+
+								<section>
+									<h2>Flux</h2>
+									<img data-src="assets/flux.png">
+								</section>
+
+								<section>
+									<h2>Meteor <span style="text-transform: lowercase">as</span> FlUX</h2>
+									<img data-src="assets/mra.svg">
+								</section>
+
+								<section>
+									<img data-src="assets/cp.jpg" width="360px">
+									<h2>Relay <span style="text-transform: lowercase">vs</span> Meteor</h2>
+									<ul>
+										<li><em>Declarative</em> - Reactive Template</li>
+										<li><em>Colocation</em> - ReactMeteorData Mixin</li>
+										<li><em>Mutations</em> - Database Everywhere, Full Stack Reactivity and Latency Compensation</li>
+									</ul>
+								</section>
 
 			</div>
 		</div>
