@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section>
+					<h1>Meteor + React</h1>
+					<h3>JavaScript Full Stack</h3>
+					<p>
+						<small>Created by <a href="http://jinglei.me">荆雷</a> </small>
+					</p>
+			  </section>
+
+				<section>
+					<h2>Agenda</h2>
+					<ul>
+						<li>JavaScript / Node.js (2)</li>
+						<li>Meteor (8)</li>
+						<li>React (6)</li>
+						<li>MongoDB</li>
+					</ul>
+			  </section>
+
+				<section>
+					<h2>壹</h2>
+					<p>JavaScript</p>
+			  </section>
+
+				<section>
+					<h2>学习资料</h2>
+					<p>
+						<small><a href="http://jinglei.me/javascript-3/">http://jinglei.me/javascript-3/</a> </small>
+					</p>
+			  </section>
+
+				<section>
+					<h2>学习方法</h2>
+					<ul>
+						<li>理论 + 实践</li>
+						<li>平台期</li>
+						<li>问题不可避免</li>
+						<li>10000 小时 / 刻意练习</li>
+					</ur>
+			  </section>
+
+				<section>
+					<h2>技术演化</h2>
+					<ul>
+						<li>TCP/IP   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   1975</li>
+						<li>HTTP     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  1989</li>
+						<li>HTTP/1.1 &nbsp;&nbsp;&nbsp;&nbsp; 1997</li>
+						<li>HTTP/2   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  2015</li>
+						<li>Unix     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     1971</li>
+						<li>Linux    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        1991</li>
+					</ur>
+			  </section>
+
+				<section>
+					<h2>JavaScript</h2>
+					<p>JavaScript 函数式编程语言</p>
+			  </section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
