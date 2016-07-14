@@ -20,6 +20,14 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+		<style>
+      a:link {
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
 	</head>
 	<body>
 		<div class="reveal">
@@ -37,7 +45,7 @@
 					<h2>Agenda</h2>
 					<ul>
 						<li>Introduction (1)</li>
-						<li>JavaScript / Node.js (1)</li>
+						<li>JavaScript (1)</li>
 						<li>Meteor (8)</li>
 						<li>React (6)</li>
 						<li>MongoDB</li>
@@ -88,7 +96,7 @@
 						<li><em>One Language</em> - JavaScript</li>
 						<li><em>Database Everywhere</em> - MiniMongo in Browser</li>
 						<li><em>Latency Compensation</em> - Optimistic Update</li>
-						<li><em>Full Stack Reactivity</em> - Auto Update</li>
+						<li><a href="http://jinglei.me/meteor-li-de-reactive-bian-liang/"><em>Full Stack Reactivity</em> - Auto Update</a></li>
 					</ul>
 				</section>
 
@@ -119,8 +127,8 @@ Session.set("radius", 10); //Reactive trigger
 									<h2>Cons</h2>
 									<ul>
 										<li><em>MongoDB Only</em> - SQL Supported Unofficially</li>
-										<li><em>NPM</em> - Supported Unofficially</li>
 										<li><em>SEO</em> - Needs Extra Jobs</li>
+										<li>中文资料较少</li>
 									</ul>
 								</section>
 
@@ -189,6 +197,11 @@ Session.set("radius", 10); //Reactive trigger
 										<li><em>Colocation</em> - ReactMeteorData Mixin</li>
 										<li><em>Mutations</em> - Database Everywhere, Full Stack Reactivity and Latency Compensation</li>
 									</ul>
+								</section>
+
+								<section>
+									<h2>总结</h2>
+									<a href="http://jinglei.me/she-ji-mo-shi/">适应变化</a>
 								</section>
 
 			</div>

@@ -20,6 +20,14 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+    <style>
+      a:link {
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
 	</head>
 	<body>
 		<div class="reveal">
@@ -35,8 +43,22 @@
 
 
 				<section>
-					<h2>JavaScript</h2>
-					<p>函数式编程语言</p>
+					<h2>JavaScript 函数</h2>
+          <ul>
+            <li><a href="http://jinglei.me/javascript-functions/">函数式编程语言</a></li>
+            <li><a href="http://jinglei.me/javascript-han-shu-de-ying-yong/">函数的应用</a></li>
+            <li><a href="https://cnodejs.org/topic/5482d05e73dcca8d21292928">闭包 Closure</a></li>
+            <li><a href="http://jinglei.me/han-shu-yuan-xing-function-prototype">函数原型 Function prototype</a></li>
+            <li><a href="https://cnodejs.org/topic/577298fd85e22178177ede44">只有函数才有原型；普通对象没有原型，但有原型指针</a></li>
+          </ul>
+			  </section>
+
+        <section>
+					<h2>JavaScript Facts</h2>
+          <ul>
+            <li><a href="http://jinglei.me/javascript-facts/">是与非</a></li>
+            <li><a href="http://jinglei.me/javascript-li-de-3-ge-6/"> 3 个 6</a></li>
+          </ul>
 			  </section>
 
 			</div>
