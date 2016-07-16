@@ -34,8 +34,8 @@
 			<div class="slides">
 
 				<section>
-					<h1> 贰 </h1>
-					<h1>JAVASCRIPT</h1>
+					<h1> 叁 </h1>
+					<h1> Meteor 基础 </h1>
 					<p>
             <small>Created by <a href="http://jinglei.me"> &nbsp; 荆雷 &nbsp; </a> in July 2016</small>
 					</p>
@@ -43,22 +43,50 @@
 
 
 				<section>
-					<h2>JavaScript 函数</h2>
-          <ul>
-            <li><a href="http://jinglei.me/javascript-functions/">函数式编程语言</a>， <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply">一个例子</a> </li> 
-            <li><a href="http://jinglei.me/javascript-han-shu-de-ying-yong/">函数的应用</a></li>
-            <li><a href="https://cnodejs.org/topic/5482d05e73dcca8d21292928">闭包 Closure</a></li>
-            <li><a href="http://jinglei.me/han-shu-yuan-xing-function-prototype">函数原型 Function prototype</a></li>
-            <li><a href="https://cnodejs.org/topic/577298fd85e22178177ede44">只有函数才有原型；普通对象没有原型，但有原型指针</a></li>
-          </ul>
+					<h2>最新进展</h2>
+          <a href="http://jinglei.me/meteor-1-4-beta-2/">1.4 beta</a>
 			  </section>
 
         <section>
-					<h2>JavaScript Facts</h2>
-          <ul>
-            <li><a href="http://jinglei.me/javascript-facts/">是与非</a></li>
-            <li><a href="http://jinglei.me/javascript-li-de-3-ge-6/"> 3 个 6</a></li>
-          </ul>
+          <h2>文件结构</h2>
+          <pre><code class="hljs" data-trim>
+imports/
+  startup/
+    client/
+      index.js                 # import client startup through a single index entry point
+      routes.js                # set up all routes in the app
+      useraccounts-configuration.js # configure login templates
+    server/
+      fixtures.js              # fill the DB with example data on startup
+      index.js                 # import server startup through a single index entry point
+
+  api/
+    lists/                     # a unit of domain logic
+      server/
+        publications.js        # all list-related publications
+        publications.tests.js  # tests for the list publications
+      lists.js                 # definition of the Lists collection
+      lists.tests.js           # tests for the behavior of that collection
+      methods.js               # methods related to lists
+      methods.tests.js         # tests for those methods
+
+  ui/
+    components/                # all reusable components in the application
+                               # can be split by domain if there are many
+    layouts/                   # wrapper components for behaviour and visuals
+    pages/                     # entry points for rendering used by the router
+
+client/
+  main.js                      # client entry point, imports all client code
+
+server/
+  main.js                      # server entry point, imports all server code
+					</code></pre>
+			  </section>
+
+        <section>
+					<h2>特点</h2>
+          <a href="http://jinglei.me/meteor-li-de-reactive-bian-liang/">Reactivity</>
 			  </section>
 
 			</div>
@@ -71,7 +99,6 @@
 			// More info https://github.com/hakimel/reveal.js#configuration
 			Reveal.initialize({
 				history: true,
-
 				// More info https://github.com/hakimel/reveal.js#dependencies
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
