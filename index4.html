@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>贰</title>
+		<title>肆</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
@@ -20,7 +20,7 @@
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
-    <style>
+		<style>
       a:link {
         text-decoration: none;
       }
@@ -34,31 +34,55 @@
 			<div class="slides">
 
 				<section>
-					<h1> 贰 </h1>
-					<h1>JAVASCRIPT</h1>
+					<h1> 肆 </h1>
+					<h1>React</h1>
 					<p>
-            <small>Created by <a href="http://jinglei.me"> &nbsp; 荆雷 &nbsp; </a> in July 2016</small>
+						<small>Created by <a href="http://jinglei.me"> &nbsp; 荆雷 &nbsp; </a> in July 2016</small>
 					</p>
 			  </section>
 
-
 				<section>
-					<h2>JavaScript 函数</h2>
-          <ul>
-            <li><a href="http://jinglei.me/javascript-functions/">函数式编程语言</a>， <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/apply">一个例子</a> </li>
-            <li><a href="http://jinglei.me/javascript-han-shu-de-ying-yong/">函数的应用</a></li>
-            <li><a href="https://cnodejs.org/topic/5482d05e73dcca8d21292928">闭包 Closure</a></li>
-            <li><a href="http://jinglei.me/han-shu-yuan-xing-function-prototype">函数原型 Function prototype</a></li>
-            <li><a href="https://cnodejs.org/topic/577298fd85e22178177ede44">只有函数才有原型；普通对象没有原型，但有原型指针</a></li>
-          </ul>
+					<h2>Introduction</h2>
+					<ul>
+						<li>职责: V in MVC</li>
+						<li>目的: 创建能适应变化的大型应用; 复用 UI 组件</li>
+						<li>作用: 让 UI 随着数据的 <span style="color:yellow">变化</span> 而自动更新</li>
+						<ul>
+              <li>Declarative 声明式 (Angular Imperative 命令式)</li>
+              <pre><code class="hljs" data-trim>
+<SubmitButton > Submit </SubmitButton> //声明式
+
+addSubmitButton(); //命令式
+              </code></pre>
+              <li>Reactive</li>
+            </ul>
+            <li>组件封装</li>
+            <li>生态: React Native / Open source components</li>
+            <li>Virtual DOM</li>
+					</ul>
 			  </section>
 
         <section>
-					<h2>JavaScript Facts</h2>
-          <ul>
-            <li><a href="http://jinglei.me/javascript-facts/">是与非</a></li>
-            <li><a href="http://jinglei.me/javascript-li-de-3-ge-6/"> 3 个 6</a></li>
-          </ul>
+					<h2>Component == Function( props)</h2>
+        </section>
+
+        <section>
+					<h2>JSX (optional)</h2>
+          JSX lets you create JavaScript objects using HTML syntax
+          <pre><code class="hljs" data-trim>
+//JSX(在 .jsx 文件里), using HTML syntax
+<a href="https://github.com/">Hello!</a>
+
+//Pure JavaScript
+React.createElement('a', {href: 'https://github.com/'}, 'Hello!')
+          </code></pre>
+
+          JSX 语法更像是 XML
+        </section>
+
+        <section>
+					<h2>特点</h2>
+          <a href="http://jinglei.me/meteor-li-de-reactive-bian-liang/">Reactivity</a>
 			  </section>
 
 			</div>
