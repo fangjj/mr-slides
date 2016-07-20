@@ -50,20 +50,23 @@
 						<ul>
               <li>Declarative 声明式 (Angular Imperative 命令式)</li>
               <pre><code class="hljs" data-trim>
-<SubmitButton > Submit </SubmitButton> //声明式
+&lt;SubmitButton> Submit &lt;/SubmitButton> //声明式
 
 addSubmitButton(); //命令式
               </code></pre>
               <li>Reactive</li>
             </ul>
             <li>组件封装</li>
+						<li><a href="https://github.com/leijing7/meteor-react-reactivity">一个简单例子源代码</a></li>
             <li>生态: React Native / Open source components</li>
+            <li>Learn once, write everywhere <strike>write once, run everywhere</strike></li>
             <li>Virtual DOM</li>
 					</ul>
 			  </section>
 
         <section>
 					<h2>Component == Function( props)</h2>
+					组件既函数
         </section>
 
         <section>
@@ -81,9 +84,35 @@ React.createElement('a', {href: 'https://github.com/'}, 'Hello!')
         </section>
 
         <section>
-					<h2>特点</h2>
-          <a href="http://jinglei.me/meteor-li-de-reactive-bian-liang/">Reactivity</a>
-			  </section>
+          <h2>JSX 注释</h2>
+          <pre><code class="hljs" data-trim>
+var content = (
+  <Nav>
+    {/* child comment, put {} around */}
+    &lt;Person
+      /* multi
+         line
+         comment */
+      name={window.isLoggedIn ? window.name : ''} // end of line comment
+    /&gt;
+  </Nav>
+);
+          </code></pre>
+        </section>
+
+				<section>
+          <h2>JSX 属性表达式</h2>
+          <pre><code class="hljs" data-trim>
+&lt;input type="button" disabled={true} /&gt;
+
+var person = &lt;Person name={window.isLoggedIn ? window.name : ''} /&gt;
+
+var props = {};
+props.foo = x;
+props.bar = y;
+var component = &lt;Component {...props} /&gt; //ES6 spread 属性
+          </code></pre>
+        </section>
 
 			</div>
 		</div>
