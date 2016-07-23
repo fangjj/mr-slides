@@ -35,14 +35,15 @@
 
 				<section>
 					<h1> 伍 </h1>
-					<h1>React 进阶</h1>
+					<h1>React 进阶 - 1</h1>
+					<a href="https://github.com/leijing7/meteor1.3plus-react-demos"> 新例子代码 Github 地址 </a>
 					<p>
             <small>Created by <a href="http://jinglei.me"> &nbsp; 荆雷 &nbsp; </a> in July 2016</small>
 					</p>
 			  </section>
 
 				<section>
-					<h2>Render</h2>
+					<h2>Render - 1</h2>
 					React 最基本最重要的方法。将模板转为 HTML 语言，并插入到指定的 DOM 节点
 					<pre><code class="hljs" data-trim>
           ReactDOM.render(&lt;App />, document.getElementById('render-target'));
@@ -52,12 +53,29 @@
 			  </section>
 
 				<section>
+					<h2>Render - 2</h2>
+					<ul>
+            <li>组件必须有 render 函数 </li>
+            <li>return null 或者 false，该组件就不会被渲染</li>
+            <li>应该为纯函数。使用 setState 会死循环</li>
+          </ul>
+			  </section>
+
+				<section>
 					<h2>Style</h2>
 					<ul>
             <li>传统的 CSS 继续可用</li>
             <li>JSX 引入了 inline style 对象</li>
           </ul>
 			  </section>
+
+				<section>
+					<h2>class</h2>
+<a href="https://github.com/JedWatson/classnames">这个包解决 JSX 的 className 拼接的问题</a>
+					<pre><code class="hljs" data-trim>
+meteor npm install --save classnames
+					</code></pre>
+				</section>
 
 				<section>
 					<h2>事件</h2>
@@ -75,7 +93,7 @@ onSubmit={this.handleSubmit.bind(this)}
           <ul>
             <li>组件既状态机</li>
             <li>Stateful vs. stateless</li>
-            <li>State 根据组件内部的事件触发改变界面的数据</li>
+            <li>State: 根据组件内部的事件触发改变界面的数据</li>
           </ul>
 			  </section>
 
@@ -178,6 +196,16 @@ render() {
 					<a href="https://github.com/StevenSLXie/Tutorials-for-Web-Developers/blob/master/MongoDB%20%E6%9E%81%E7%AE%80%E5%AE%9E%E8%B7%B5%E5%85%A5%E9%97%A8.md">
 						MongoDB 极简实践入门
 					</a>
+			  </section>
+
+				<section>
+					<h2>安全</h2>
+
+          <pre><code class="hljs" data-trim>
+          meteor remove insecure
+          </code></pre>
+
+					<p>只有在服务端才能修改数据库</p>
 			  </section>
 
 				<section>
