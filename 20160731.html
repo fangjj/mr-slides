@@ -51,8 +51,8 @@
             <li>One language - JavaScript</li>
             <li>Database on client & server</li>
             <li>Real time on WebSocket</li>
-            <li>Optimistic UI (Latency Compensation / Dead Reackoning)</li>
             <li>Reactive - auto update</li>
+            <li>Optimistic UI (Latency Compensation / Dead Reackoning)</li>
           <ul>
 			  </section>
 
@@ -146,6 +146,33 @@
           <ul>
 			  </section>
 
+
+
+        <section>
+					<h2>Reactive Programming</h2>
+          <p>reactive source &middot; reactive computation</p>
+          <pre><code class="hljs" data-trim>
+class App extends Component {
+  ...
+}
+
+export default createContainer(() => {
+  Meteor.subscribe('tasks');
+
+  return {
+    tasks: Tasks.find({}, { sort: { createdAt: -1 } }).fetch(),
+    incompleteCount: Tasks.find({ checked: { $ne: true } }).count(),
+    currentUser: Meteor.user(),
+  };
+}, App);
+          </code></pre>
+			  </section>
+
+        <section>
+					<h2>Reactive Programming</h2>
+          <img data-src="assets/reactivity_test.gif" width="960px">
+			  </section>
+
         <section>
 					<h2>Optimistic UI</h2>
 
@@ -205,31 +232,6 @@ if (Meteor.isClient) {
         <section>
 					<h2>Optimistic UI failed</h2>
           <img data-src="assets/failedOpti.gif" width="800px">
-			  </section>
-
-        <section>
-					<h2>Reactive Programming</h2>
-          <p>reactive source &middot; reactive computation</p>
-          <pre><code class="hljs" data-trim>
-class App extends Component {
-  ...
-}
-
-export default createContainer(() => {
-  Meteor.subscribe('tasks');
-
-  return {
-    tasks: Tasks.find({}, { sort: { createdAt: -1 } }).fetch(),
-    incompleteCount: Tasks.find({ checked: { $ne: true } }).count(),
-    currentUser: Meteor.user(),
-  };
-}, App);
-          </code></pre>
-			  </section>
-
-        <section>
-					<h2>Reactive Programming</h2>
-          <img data-src="assets/reactivity_test.gif" width="960px">
 			  </section>
 
         <section>
