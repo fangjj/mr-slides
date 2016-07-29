@@ -11,7 +11,6 @@
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -20,6 +19,9 @@
 			link.type = 'text/css';
 			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
+      window.onload = function() {
+        Gifffer();
+      }
 		</script>
 		<style>
       a:link {
@@ -27,6 +29,36 @@
       }
       a:hover {
         text-decoration: underline;
+      }
+      .bgImg {
+        display: inline-block;
+        position: relative;
+        z-index : 1;
+      }
+      .blurImg {
+        -webkit-filter: blur(2px) brightness(50%);
+        -moz-filter: blur(2px) brightness(50%);
+        -o-filter: blur(2px) brightness(50%);
+        -ms-filter: blur(2px) brightness(50%);
+        filter: blur(2px) brightness(50%);
+      }
+      .embedImg {
+        height: 120px;
+        position: absolute;
+        z-index: 9999;
+        top: 0;
+        right: 40px;
+        background: rgba(255, 255, 255, 0) !important;
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0) !important;
+        -webkit-filter: brightness(140%);
+        -moz-filter: brightness(140%);
+        -o-filter: brightness(140%);
+        -ms-filter: brightness(140%);
+        filter: brightness(140%);
+      }
+      .logoImg {
+        height: 110px;
+        background-color: white !important;
       }
     </style>
 	</head>
@@ -41,16 +73,26 @@
 					<p>
 						<small>Created by <a href="http://jinglei.me"> &nbsp; 荆雷 &nbsp; </a> in July 2016</small>
 					</p>
-          <a href="http://slides.jinglei.me/talk/20160731">http://slides.jinglei.me/talk/20160731</a>
+          <a href="http://slides.jinglei.me/20160731">http://slides.jinglei.me/20160731</a>
 			  </section>
 
         <section>
 					<h2>Meteor ?</h2>
           <p> Full-stack JavaScript framework for web & mobile</p>
+          <img src="assets/js.png" class="logoImg">
+          <img src="assets/nodejs.png" class="logoImg">
+          <img src="assets/npmlogo.png" class="logoImg">
+          <br/>
+          <img src="assets/mongodb.png" class="logoImg">
+          <img src="assets/websockets-logo.png" class="logoImg">
+          <div class="bgImg">
+            <div class="blurImg">
+                <img src="assets/browsers.png" alt="" class="logoImg" style="display: block;" />
+            </div>
+            <img src="assets/mongoLeaf.png" alt="" class="embedImg" style="border: 0 !important;"/>
+          </div>
+
           <ul>
-            <li>One language - JavaScript</li>
-            <li>Database on client & server</li>
-            <li>Real time on WebSocket</li>
             <li>Reactive - auto update</li>
             <li>Optimistic UI (Latency Compensation / Dead Reackoning)</li>
           <ul>
@@ -80,18 +122,17 @@
         </section>
 
         <section>
-					<h2>DB</h2>
-          <ul>
-            <li>MongoDB on server</li>
-            <li>MiniMongo on client</li>
-            <li>Apollo - SQL</li>
-          <ul>
+					<h2>Frontend</h2>
+          <img src="assets/angular_react.png" width="60%">
+          <p>React &middot; Angular &middot; Blaze</p>
 			  </section>
 
         <section>
-					<h2>Frontend</h2>
-          <img src="assets/angular_react.png" width="50%">
-          <p>React &middot; Angular &middot; Blaze</p>
+					<h2><span style="color: #0074D9;">React </span> <span style="font-size: 0.6em">vs</span> <span style="color: #FF851B;"> Angular </span></h2>
+          <img src="assets/react_angular_graph.png" width="100%">
+          <p>
+            <a href="http://www.npmtrends.com/react-vs-angular"> npm trends (download counts) </a>
+          </p>
 			  </section>
 
         <section>
@@ -147,6 +188,10 @@
 			  </section>
 
 
+        <section>
+					<h2>Reactive Updating</h2>
+          <img data-gifffer="assets/reactivity_test.gif" width="100%" data-gifffer-alt="Reactive demo gif">
+			  </section>
 
         <section>
 					<h2>Reactive Programming</h2>
@@ -168,15 +213,21 @@ export default createContainer(() => {
           </code></pre>
 			  </section>
 
+
         <section>
-					<h2>Reactive Programming</h2>
-          <img data-src="assets/reactivity_test.gif" width="960px">
+					<h2>Optimistic UI<small>(Latency compensation &middot; Dead reckoning)</small></h2>
+
+          <img data-src="assets/optimistic-ui-flow.png" width="640px">
+			  </section>
+
+
+        <section>
+					<h2>Optimistic UI</h2>
+          <img data-gifffer="assets/optimistic.gif" width="100%">
 			  </section>
 
         <section>
 					<h2>Optimistic UI</h2>
-
-          <p>Latency compensation &middot; Dead reckoning</p>
           <pre><code class="hljs" data-trim>
 const insertTask = () => Tasks.insert( newTask )
 
@@ -191,9 +242,10 @@ if (Meteor.isClient) {
           </code></pre>
 			  </section>
 
+
         <section>
-					<h2>Optimistic UI</h2>
-          <img data-src="assets/optimistic.gif" width="800px">
+					<h2>No Optimistic UI</h2>
+          <img data-gifffer="assets/noOpti.gif" width="100%">
 			  </section>
 
         <section>
@@ -209,9 +261,10 @@ if (Meteor.isServer) {
           </code></pre>
         </section>
 
+
         <section>
-					<h2>No Optimistic UI</h2>
-          <img data-src="assets/noOpti.gif" width="800px">
+					<h2>Optimistic UI failed</h2>
+          <img data-gifffer="assets/failedOpti.gif" width="100%">
 			  </section>
 
         <section>
@@ -229,10 +282,6 @@ if (Meteor.isClient) {
           </code></pre>
         </section>
 
-        <section>
-					<h2>Optimistic UI failed</h2>
-          <img data-src="assets/failedOpti.gif" width="800px">
-			  </section>
 
         <section>
 					<h1>Thank You</h1>
@@ -244,6 +293,7 @@ if (Meteor.isClient) {
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
+		<script src="js/gifffer.min.js"></script>
 
 		<script>
 			// More info https://github.com/hakimel/reveal.js#configuration
