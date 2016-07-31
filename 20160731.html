@@ -68,12 +68,12 @@
 
 				<section>
 					<h1> Meteor + React </h1>
-					<p>Modern App Development</p>
+					<p>Modern Web App Development</p>
           <img src="assets/mr-logo.png">
 					<p>
 						<small>Created by <a href="http://jinglei.me"> &nbsp; 荆雷 &nbsp; </a> in July 2016</small>
 					</p>
-          <a href="http://slides.jinglei.me/20160731">http://slides.jinglei.me/20160731</a>
+          <a href="http://slides.jinglei.me/20160731">slides.jinglei.me/20160731</a>
 			  </section>
 
         <section>
@@ -83,18 +83,19 @@
           <img src="assets/nodejs.png" class="logoImg">
           <img src="assets/npmlogo.png" class="logoImg">
           <br/>
-          <img src="assets/mongodb.png" class="logoImg">
-          <img src="assets/websockets-logo.png" class="logoImg">
-          <div class="bgImg">
+					<div class="bgImg">
             <div class="blurImg">
                 <img src="assets/browsers.png" alt="" class="logoImg" style="display: block;" />
             </div>
             <img src="assets/mongoLeaf.png" alt="" class="embedImg" style="border: 0 !important;"/>
           </div>
+					<img src="assets/websockets-logo.png" class="logoImg">
+          <img src="assets/mongodb.png" class="logoImg">
+
 
           <ul>
             <li>Reactive - auto update</li>
-            <li>Optimistic UI (Latency Compensation / Dead Reackoning)</li>
+            <li>Optimistic UI <br/>(Latency Compensation / Dead Reckoning)</li>
           <ul>
 			  </section>
 
@@ -124,7 +125,7 @@
         <section>
 					<h2>Frontend</h2>
           <img src="assets/angular_react.png" width="60%">
-          <p>React &middot; Angular &middot; Blaze</p>
+          <p>Blaze &middot; Angular &middot; React</p>
 			  </section>
 
         <section>
@@ -181,8 +182,8 @@
 					<h2>WebSocket - Real Time</h2>
           <img data-src="assets/html5_websocket.png" width="320px">
           <ul>
-            <li>Full-duplex on a single TCP connection</li>
             <li>Not RESTful HTTP - Pub/Sub pattern</li>
+            <li>Full-duplex on a single TCP connection</li>
             <li>Meteor DDP</li>
           <ul>
 			  </section>
@@ -220,6 +221,23 @@ export default createContainer(() => {
           <img data-src="assets/optimistic-ui-flow.png" width="65%">
 			  </section>
 
+				<section>
+					<h2>No Optimistic UI</h2>
+					<img data-gifffer="assets/noOpti.gif" data-gifffer-duration="7000" data-gifffer-width="960" data-gifffer-height="524">
+				</section>
+
+				<section>
+					<h2>No Optimistic UI</h2>
+					<pre><code class="hljs" data-trim>
+// Insert only on server side
+if (Meteor.isServer) {
+  Meteor._sleepForMs(2000) //simulate network delay
+  insertTask()
+}
+
+// no client side insert stub
+					</code></pre>
+				</section>
 
         <section>
 					<h2>Optimistic UI</h2>
@@ -242,24 +260,6 @@ if (Meteor.isClient) {
           </code></pre>
 			  </section>
 
-
-        <section>
-					<h2>No Optimistic UI</h2>
-          <img data-gifffer="assets/noOpti.gif" data-gifffer-duration="7000" data-gifffer-width="960" data-gifffer-height="524">
-			  </section>
-
-        <section>
-          <h2>No Optimistic UI</h2>
-          <pre><code class="hljs" data-trim>
-// Insert only on server side
-if (Meteor.isServer) {
-  Meteor._sleepForMs(2000) //simulate network delay
-  insertTask()
-}
-
-// no client side insert stub
-          </code></pre>
-        </section>
 
 
         <section>
@@ -286,6 +286,9 @@ if (Meteor.isClient) {
         <section>
 					<h1>Thank You</h1>
 					<p>Q&A</p>
+          <br />
+          <br />
+          <a href="https://github.com/leijing7/meteor1.3plus-react-demos/tree/master/simple-todos-react">例子代码地址</a>
 			  </section>
 
 			</div>
