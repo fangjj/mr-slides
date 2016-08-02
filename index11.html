@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>拾</title>
+		<title>十一</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
@@ -34,38 +34,65 @@
 			<div class="slides">
 
 				<section>
-					<h1> 拾 </h1>
-					<h1>Meteor 进阶</h1>
+					<h1> 十一 </h1>
+					<h1>前端架构</h1>
 					<p>
 						<small>Created by <a href="http://jinglei.me"> &nbsp; 荆雷 &nbsp; </a> in August 2016</small>
 					</p>
 			  </section>
 
         <section>
-					<h2>.meteor 文件夹</h2>
+					<h2>Flux</h2>
+          <p>一种模式而不是框架</p>
           <ul>
-            <li>local</li>
-            <li>packages</li>
+            <li>只涉及前端</li>
+            <li>单向数据流 unidirectional data flow</li>
           <ul>
-						...
 			  </section>
 
         <section>
-          <h2>不需要的 Meteor 包</h2>
-					<ul>
-            <li>autopublish</li>
-						<li>insecure</li>
+          <h2>Flux</h2>
+          <img data-src="assets/flux.png">
+          Dispatcher &middot; Store  &middot; View(React component)
+        </section>
+
+        <section>
+					<h2>Actions</h2>
+          <p>含有新数据的对象</p>
           <ul>
+            <li>用户交互事件 + 数据</li>
+            <li>服务器事件 + 数据</li>
+          <ul>
+			  </section>
+
+        <section>
+					<h2>Dispatcher</h2>
+          <p>一组回调函数</p>
+          <ul>
+            <li>Singleton</li>
+            <li>数据流的管理分发，例如顺序控制</li>
+            <li>Stores 回调函数注册中心</li>
+            <li>Actions 调用 store 回调函数</li>
+          <ul>
+			  </section>
+
+        <section>
+					<h2>Stores</h2>
+          <p>状态和业务逻辑</p>
+          <ul>
+            <li>在 dispatcher 注册回调函数</li>
+            <li>回调函数接受 action 作为参数，更新相关 store</li>
+            <li>更新了的 store 广播变化，UI 重绘</li>
+          <ul>
+			  </section>
+
+        <section>
+          <h2>Meteor as Flux</h2>
+          <img data-src="assets/mrf.svg">
+          Controller-View &asymp; Model-View-Controller
         </section>
 
-				<section>
-          <h2>Demo</h2>
-					WhichCab
-        </section>
 
-				<section>
-          <h2>User Account</h2>
-        </section>
 
 			</div>
 		</div>
