@@ -50,6 +50,16 @@
 						...
 			  </section>
 
+				<section>
+          <h2>Demo</h2>
+					<p>WhichCab</p>
+					<ul>
+            <li>账号系统</li>
+						<li>Method</li>
+						<li>前后端通信</li>
+          <ul>
+        </section>
+
         <section>
           <h2>不需要的 Meteor 包</h2>
 					<ul>
@@ -58,13 +68,78 @@
           <ul>
         </section>
 
+
 				<section>
-          <h2>Demo</h2>
-					WhichCab
+          <h2>DocHead</h2>
+					<a href="https://github.com/kadirahq/meteor-dochead"> 动态修改 head 属性 </a>
+					<br/>
+					<ul>
+            <li> title </li>
+						<li> meta tags </li>
+						<li> link </li>
+						<li> loadScript </li>
+          <ul>
+						...
+        </section>
+
+				<section>
+          <h2>提示信息</h2>
+					<ul>
+            <li>消息</li>
+						<li>modal</li>
+          <ul>
         </section>
 
 				<section>
           <h2>User Account</h2>
+					注册 &middot; 登录 &middot; 退出
+					<pre><code class="hljs" data-trim>
+meteor add accounts-password
+meteor add accounts-google
+meteor add accounts-github
+					</code></pre>
+        </section>
+
+				<section>
+          <h2>Passwords</h2>
+					<ul>
+            <li> 用户名、email 两种登录方式 </li>
+						<li> 完整的二元认证系统（二步认证） </li>
+						<li> bcryt 哈希加密 </li>
+						<li> 重设密码 Accounts.onResetPasswordLink</li>
+          <ul>
+        </section>
+
+				<section>
+          <h2>User Info</h2>
+					reactive source
+					<pre><code class="hljs" data-trim>
+Meteor.userId() // 17 位字符串
+
+// delay，使用 reactive computation (komposer) 获取
+// 等于 Meteor.users.findOne(Meteor.userId()
+// username, emails, profile(客户端可写)
+// 多次调用，最好使用变量保存用户信息，因为查询耗时
+Meteor.user()
+					</code></pre>
+        </section>
+
+				<section>
+          <h2>Profile</h2>
+					不要在发布时使用 profile，因为默认可写
+					<br/>
+					<br/>
+					Pub / sub 只比较顶层 field 异同
+        </section>
+
+				<section>
+          <h2>OAuth 认证</h2>
+					<a href="http://www.ruanyifeng.com/blog/2014/05/oauth_2_0.html">开放标准的登录认证</a>
+					<ul>
+            <li> 第三方应用程序 </li>
+						<li> 认证服务器 </li>
+						<li> token (权限、有效期) </li>
+          <ul>
         </section>
 
 			</div>
