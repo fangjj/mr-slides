@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>十二</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<style>
+      a:link {
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section>
+					<h1> 十二 </h1>
+					<h1>Meteor Mantra</h1>
+					<p>
+						<small>Created by <a href="http://jinglei.me"> &nbsp; 荆雷 &nbsp; </a> in August 2016</small>
+					</p>
+			  </section>
+
+        <section>
+          <h2>Mantra 后端架构</h2>
+          <ul>
+            <li>methods</li>
+            <li>publications</li>
+            <li>libs</li>
+            <li>configs</li>
+            <li>main.js</li>
+          <ul>
+        </section>
+
+        <section>
+					<h2>methods</h2>
+          <p>每个类别的方法汇聚为一个 js 文件。记得用 stub 获得 optimistic UI 特性</p>
+          <ul>
+            <li>posts.js</li>
+            <li>index.js - 集成</li>
+            <li>tests</li>
+          <ul>
+			  </section>
+
+        <section>
+					<h2>publications</h2>
+          <p>类似 methods</p>
+			  </section>
+
+        <section>
+					<h2>其他</h2>
+          <ul>
+            <li>libs</li>
+            <li>configs</li>
+            <li>main.js</li>
+          <ul>
+			  </section>
+
+        <section>
+					<h2>mantra-cli</h2>
+          <a href="https://github.com/mantrajs/mantra-cli"> Github repo </a>
+          <ul>
+            <li>create</li>
+            <li>generate</li>
+            <li>destroy</li>
+          <ul>
+			  </section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-55732439-5', 'auto');
+			ga('send', 'pageview');
+		</script>
+	</body>
+</html>
