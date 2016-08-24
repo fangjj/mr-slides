@@ -121,7 +121,7 @@
         <section>
 					<h2>Latest News</h2>
           <img src="assets/nodemongo.jpg">
-          <p>Meteor 1.4.1 released on 18.August</p>
+          <p>Meteor 1.4.1.1 released on 24.August</p>
           <ul>
             <li>Node.js 4.* LTS</li>
             <li>MongoDB 3.2 - WiredTiger storage engine</li>
@@ -143,15 +143,7 @@
           <p>Blaze &middot; Angular &middot; React</p>
 			  </section>
 
-        <section>
-					<h2><span style="color: #0074D9;">React </span> <span style="font-size: 0.6em">vs</span> <span style="color: #FF851B;"> Angular </span></h2>
-          <img src="assets/react_angular_graph.png" width="100%">
-          <p>
-            <a href="http://www.npmtrends.com/react-vs-angular"> Source: npm trends (download counts) </a>
-          </p>
-			  </section>
-
-        <section>
+				<section>
           <h2>Blaze</h2>
           <img data-src="assets/smallSwiss.jpg" width="260px">
           <ul >
@@ -159,6 +151,14 @@
             <li><em>Limit</em> - Only in Meteor</li>
           </ul>
         </section>
+
+        <section>
+					<h2><span style="color: #0074D9;">React </span> <span style="font-size: 0.6em">vs</span> <span style="color: #FF851B;"> Angular </span></h2>
+          <img src="assets/react_angular_graph.png" width="100%">
+          <p>
+            <a href="http://www.npmtrends.com/react-vs-angular"> Source: npm trends (download counts) </a>
+          </p>
+			  </section>
 
         <section>
           <h2>Angular</h2>
@@ -174,7 +174,7 @@
         <section>
           <h2> A<span style="text-transform: lowercase">twood's</span> L<span style="text-transform: lowercase">aw</span> </h2>
           <img data-src="assets/atwood.jpg">
-					<blockquote>
+					<blockquote class="fragment">
 						&ldquo;Any application that can be written in JavaScript, will eventually be written in JavaScript. &rdquo;
 					</blockquote>
         </section>
@@ -185,7 +185,7 @@
           <ul>
             <li><em>Component</em> - Decoupling / Encapsulation</li>
             <li><em>Unidirectional Data Flow</em> - Easier to Reason</li>
-            <li><em>Reactivity</em> - Auto Update, Less Code <a href="https://facebook.github.io/react/contributing/design-principles.html#scheduling">(Schedule)</a></li>
+            <li><em>Reactivity</em> - Async Auto Update <a href="https://facebook.github.io/react/contributing/design-principles.html#scheduling">(Schedule)</a></li>
             <li><em>Virtual Dom</em> - Performance Improvement</li>
           </ul>
         </section>
@@ -200,7 +200,7 @@
 					<h2>WebSocket - Real Time</h2>
           <img data-src="assets/html5_websocket.png" width="320px">
           <ul>
-            <li class="fragment">Not RESTful HTTP - Pub/Sub pattern</li>
+            <li class="fragment">No RESTful HTTP - Pub/Sub pattern</li>
             <li class="fragment">Full-duplex on a single TCP connection</li>
             <li class="fragment">Meteor DDP</li>
           <ul>
@@ -209,8 +209,8 @@
 				<section>
           <h2>Reactive Programming ?</h2>
 					<br />
-					<span class="remindColor fragment">自动异步更新</span>
-					<span class="fragment"> - 数据</span>
+					<span class="remindColor fragment">异步自动更新</span>
+					<span class="fragment"> - 数据 <span class="fragment">(UI)</span></span>
 					<br />
 					<br />
 					<br />
@@ -241,7 +241,7 @@ console.log(b) // 输出 12
 			  </section>
 
 				<section>
-					<h2>自动<span class="remindColor">异步</span>更新</h2>
+					<h2><span class="remindColor">异步</span>自动更新</h2>
 					<span class="fragment"><=</span>
 					<pre class="fragment"><code class="hljs" data-trim>
 let a = 1;
@@ -253,16 +253,16 @@ console.log(b) // 输出 12
 				</section>
 
 				<section>
-					<h2>UI 自动<span class="remindColor">异步</span>更新</h2>
+					<h2> <span class="remindColor"> UI 异步</span>自动更新</h2>
 					<pre class="fragment"><code class="hljs" data-trim>
 let a = 1;
 let b <= a + 1; // 永久关系
 ...
-<p> { b } </p> //开始是2， 再 a=11 之后自动更新显示为 12，这就是异步
+<p> b = { b } </p> //开始是2， 再 a=11 之后自动更新显示为 12，这就是异步
 ...
 a = 11;
 ...
-<p> { b } </p> //12
+<p> b = { b } </p> //12
 ...
 					</code></pre>
 					<span class="fragment">Reactive Programming 反应式编程</span>
@@ -369,9 +369,16 @@ if (Meteor.isClient) {
 					<h2>Storybook</h2>
 					<p>Isolate your React UI Component development from the main app</p>
           <br />
-          <a href="https://github.com/kadirahq/react-storybook">Github Repo</a>
-					&middot;
-          <a href="https://storybooks.io/">http://storybooks.io</a>
+					<div class="fragment">
+	          <a href="https://github.com/kadirahq/react-storybook">Github Repo</a>
+						&middot;
+	          <a href="https://storybooks.io/">http://storybooks.io</a>
+					</div>
+			  </section>
+
+				<section>
+					<h2>Storybook</h2>
+					<p>Demo</p>
 			  </section>
 
         <section>
