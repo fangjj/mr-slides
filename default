@@ -124,11 +124,15 @@ server {
         }
 
 	location /tr1/idx {
-                try_files $uri $uri/ /tr1/idxtr1.html;
+                try_files $uri $uri/ /tr1/idx.html;
         }
 
 	location /tr2/idx {
-                try_files $uri $uri/ /tr2/idxtr2.html;
+                try_files $uri $uri/ /tr2/idx.html;
+        }
+
+	location /tr2/outline {
+                try_files $uri $uri/ /tr2/outline.html;
         }
 
 	location /rdemo {
