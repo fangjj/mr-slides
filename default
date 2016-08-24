@@ -43,76 +43,76 @@ server {
 	# Make site accessible from http://localhost/
 	server_name localhost;
 
-	location /1 {
+	location /tr1/1 {
 		# First attempt to serve request as file, then
 		# as directory, then fall back to displaying a 404.
-		try_files $uri $uri/ /index1.html;
+		try_files $uri $uri/ /tr1/index1.html;
 		# Uncomment to enable naxsi on this location
 		# include /etc/nginx/naxsi.rules
 	}
 
-	location /2 {
-                try_files $uri $uri/ /index2.html;
+	location /tr1/2 {
+                try_files $uri $uri/ /tr1/index2.html;
         }
 
-	location /3 {
-                try_files $uri $uri/ /index3.html;
+	location /tr1/3 {
+                try_files $uri $uri/ /tr1/index3.html;
         }
 
-	location /4 {
-                try_files $uri $uri/ /index4.html;
+	location /tr1/4 {
+                try_files $uri $uri/ /tr1/index4.html;
         }
 
-	location /5 {
-                try_files $uri $uri/ /index5.html;
+	location /tr1/5 {
+                try_files $uri $uri/ /tr1/index5.html;
         }
 
-	location /6 {
-                try_files $uri $uri/ /index6.html;
+	location /tr1/6 {
+                try_files $uri $uri/ /tr1/index6.html;
         }
 
-	location /7 {
-                try_files $uri $uri/ /index7.html;
+	location /tr1/7 {
+                try_files $uri $uri/ /tr1/index7.html;
         }
 
-	location /8 {
-                try_files $uri $uri/ /index8.html;
+	location /tr1/8 {
+                try_files $uri $uri/ /tr1/index8.html;
         }
 
-	location /9 {
-                try_files $uri $uri/ /index9.html;
+	location /tr1/9 {
+                try_files $uri $uri/ /tr1/index9.html;
         }
 
-	location /10 {
-                try_files $uri $uri/ /index10.html;
+	location /tr1/10 {
+                try_files $uri $uri/ /tr1/index10.html;
         }
 
-	location /11 {
-                try_files $uri $uri/ /index11.html;
+	location /tr1/11 {
+                try_files $uri $uri/ /tr1/index11.html;
         }
 
-	location /12 {
-                try_files $uri $uri/ /index12.html;
+	location /tr1/12 {
+                try_files $uri $uri/ /tr1/index12.html;
         }
 
 	location /20160326 {
                 try_files $uri $uri/ /20160326.html;
         }
 
-	location /13 {
-                try_files $uri $uri/ /index13.html;
+	location /tr1/13 {
+                try_files $uri $uri/ /tr1/index13.html;
         }
 
-	location /14 {
-                try_files $uri $uri/ /index14.html;
+	location /tr1/14 {
+                try_files $uri $uri/ /tr1/index14.html;
         }
 
-	location /15 {
-                try_files $uri $uri/ /index15.html;
+	location /tr1/15 {
+                try_files $uri $uri/ /tr1/index15.html;
         }
 
-	location /16 {
-                try_files $uri $uri/ /index16.html;
+	location /tr1/16 {
+                try_files $uri $uri/ /tr1/index16.html;
         }
 
 	location /20160731 {
@@ -124,7 +124,7 @@ server {
         }
 
 	location /tr1 {
-                try_files $uri $uri/ /idxtr1.html;
+                try_files $uri $uri/ /tr1/idxtr1.html;
         }
 
 	location /rdemo {

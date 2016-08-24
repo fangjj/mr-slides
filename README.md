@@ -32,3 +32,9 @@ After pull the src code, run
 ```
 service nginx restart
 ```
+
+Or run below command locally after changed any content
+
+```
+ssh root@slides.jinglei.me "cd /usr/share/nginx/html/mr-slides && git pull && service nginx restart"
+```
