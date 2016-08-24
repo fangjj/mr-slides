@@ -119,6 +119,9 @@ server {
                 try_files $uri $uri/ /20160731.html;
         }
 
+	location /20160828 {
+                try_files $uri $uri/ /20160828.html;
+        }
 
 	location /tr1 {
                 try_files $uri $uri/ /idxtr1.html;

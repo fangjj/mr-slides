@@ -1,0 +1,417 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Meteor + React</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+      window.onload = function() {
+        Gifffer();
+      }
+		</script>
+		<style>
+      a:link {
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .bgImg {
+        display: inline-block;
+        position: relative;
+        z-index : 1;
+      }
+      .blurImg {
+        -webkit-filter: blur(2px) brightness(50%);
+        -moz-filter: blur(2px) brightness(50%);
+        -o-filter: blur(2px) brightness(50%);
+        -ms-filter: blur(2px) brightness(50%);
+        filter: blur(2px) brightness(50%);
+      }
+      .embedImg {
+        height: 120px;
+        position: absolute;
+        z-index: 9999;
+        top: 0;
+        right: 40px;
+        background: rgba(255, 255, 255, 0) !important;
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0) !important;
+        -webkit-filter: brightness(140%);
+        -moz-filter: brightness(140%);
+        -o-filter: brightness(140%);
+        -ms-filter: brightness(140%);
+        filter: brightness(140%);
+      }
+      .logoImg {
+        height: 110px;
+        background-color: white !important;
+      }
+			.remindColor {
+				color: #F8512F
+			}
+    </style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section>
+					<h1> Reactive Meteor </h1>
+					<p>Modern Web App Development</p>
+          <img src="assets/mr-logo.png">
+					<p>
+						<small>Created by <a href="http://jinglei.me"> &nbsp; 荆雷 &nbsp; </a> in August 2016</small>
+					</p>
+          <a href="http://slides.jinglei.me/20160828">slides.jinglei.me/20160828</a>
+			  </section>
+
+				<section>
+					<h2>Agenda</h2>
+					<br />
+					<ol>
+						<li class="fragment">Meteor? Current and Future</li>
+						<br />
+						<li class="fragment">Reactive Programming</li>
+						<br />
+						<li class="fragment">Optimistic UI (Latency Compensation)</li>
+						<br />
+						<li class="fragment">Storybook</li>
+					<ol>
+				</section>
+
+        <section>
+					<h2>Meteor ?</h2>
+          <p> Full-stack JavaScript framework for web & mobile</p>
+					<div class="fragment">
+	          <img src="assets/js.png" class="logoImg">
+	          <img src="assets/nodejs.png" class="logoImg">
+	          <img src="assets/npmlogo.png" class="logoImg">
+	          <br/>
+						<div class="bgImg">
+	            <div class="blurImg">
+	                <img src="assets/browsers.png" alt="" class="logoImg" style="display: block;" />
+	            </div>
+	            <img src="assets/mongoLeaf.png" alt="" class="embedImg" style="border: 0 !important;"/>
+	          </div>
+						<img src="assets/websockets-logo.png" class="logoImg">
+	          <img src="assets/mongodb.png" class="logoImg">
+					</div>
+			  </section>
+
+        <section>
+					<h2>npm</h2>
+          <img src="assets/npmlogo.png">
+          <p>npm package since Meteor 1.3</p>
+			  </section>
+
+        <section>
+					<h2>Latest News</h2>
+          <img src="assets/nodemongo.jpg">
+          <p>Meteor 1.4.1 released on 18.August</p>
+          <ul>
+            <li>Node.js 4.* LTS</li>
+            <li>MongoDB 3.2 - WiredTiger storage engine</li>
+            <li>Relaxing core package versions </li>
+          <ul>
+			  </section>
+
+        <section>
+          <h2>SQL</h2>
+          <img data-src="assets/MySQL.png" height="200px">
+          <img data-src="assets/postgresql-logo.png" height="200px" style="background-color: white !important;">
+          <p>Meteor 1.5 on the way + Apollo (GraphQL) => <span style="color: green">SQL</span> </p>
+        </section>
+
+				<section>
+        <section>
+					<h2>Frontend</h2>
+          <img src="assets/angular_react.png" width="60%">
+          <p>Blaze &middot; Angular &middot; React</p>
+			  </section>
+
+        <section>
+					<h2><span style="color: #0074D9;">React </span> <span style="font-size: 0.6em">vs</span> <span style="color: #FF851B;"> Angular </span></h2>
+          <img src="assets/react_angular_graph.png" width="100%">
+          <p>
+            <a href="http://www.npmtrends.com/react-vs-angular"> Source: npm trends (download counts) </a>
+          </p>
+			  </section>
+
+        <section>
+          <h2>Blaze</h2>
+          <img data-src="assets/smallSwiss.jpg" width="260px">
+          <ul >
+            <li><em>Simple</em> - Handlebar Style, Easy to Learn</li>
+            <li><em>Limit</em> - Only in Meteor</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Angular</h2>
+          <img data-src="assets/bigSwiss.jpg" width="360px">
+          <ul >
+            <li><em>Monolithic</em> - A Complete Framework</li>
+            <li><em>Dirty Check</em> - Performance Issue</li>
+            <li><em>Bidirectional</em> - Two-way binding is complicated</li>
+            <li><em>2.0 in TypeScript</em> - Serious?</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2> A<span style="text-transform: lowercase">twood's</span> L<span style="text-transform: lowercase">aw</span> </h2>
+          <img data-src="assets/atwood.jpg">
+					<blockquote>
+						&ldquo;Any application that can be written in JavaScript, will eventually be written in JavaScript. &rdquo;
+					</blockquote>
+        </section>
+
+        <section>
+          <h2>React</h2>
+          <img data-src="assets/midSwiss.jpg" width="300px">
+          <ul>
+            <li><em>Component</em> - Decoupling / Encapsulation</li>
+            <li><em>Unidirectional Data Flow</em> - Easier to Reason</li>
+            <li><em>Reactivity</em> - Auto Update, Less Code <a href="https://facebook.github.io/react/contributing/design-principles.html#scheduling">(Schedule)</a></li>
+            <li><em>Virtual Dom</em> - Performance Improvement</li>
+          </ul>
+        </section>
+        </section>
+
+        <section>
+          <h2>Meteor Data Flow</h2>
+          <img data-src="assets/mantra_flow.svg">
+        </section>
+
+        <section>
+					<h2>WebSocket - Real Time</h2>
+          <img data-src="assets/html5_websocket.png" width="320px">
+          <ul>
+            <li class="fragment">Not RESTful HTTP - Pub/Sub pattern</li>
+            <li class="fragment">Full-duplex on a single TCP connection</li>
+            <li class="fragment">Meteor DDP</li>
+          <ul>
+			  </section>
+
+				<section>
+          <h2>Reactive Programming ?</h2>
+					<br />
+					<span class="remindColor fragment">自动异步更新</span>
+					<span class="fragment"> - 数据</span>
+					<br />
+					<br />
+					<br />
+					<span class="fragment"><a href="http://www.jianshu.com/p/d8ba7a0834a9"> (FRP - Functional Reactive Programming) </a></span>
+        </section>
+
+				<section>
+					<h2><span class="remindColor">更新</span></h2>
+					<pre class="fragment"><code class="hljs" data-trim>
+let a = 1;
+let b = a + 1;
+a = 11;
+b = a + 1; //保证 b 比 a 大 1，每次都需要调用这句
+					</code></pre>
+				</section>
+
+				<section>
+				  <h2><span class="remindColor">自动</span>更新</h2>
+				  <pre class="fragment"><code class="hljs" data-trim>
+let a = 1;
+let b = function(){
+  return a + 1;
+};
+console.log(b) // 输出 2
+a = 11;
+console.log(b) // 输出 12
+				  </code></pre>
+			  </section>
+
+				<section>
+					<h2>自动<span class="remindColor">异步</span>更新</h2>
+					<span class="fragment"><=</span>
+					<pre class="fragment"><code class="hljs" data-trim>
+let a = 1;
+let b <= a + 1; // 永久联系
+console.log(b) // 输出 2
+a = 11;
+console.log(b) // 输出 12
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>UI 自动<span class="remindColor">异步</span>更新</h2>
+					<pre class="fragment"><code class="hljs" data-trim>
+let a = 1;
+let b <= a + 1; // 永久关系
+...
+<p> { b } </p> //开始是2， 再 a=11 之后自动更新显示为 12，这就是异步
+...
+a = 11;
+...
+<p> { b } </p> //12
+...
+					</code></pre>
+					<span class="fragment">Reactive Programming 反应式编程</span>
+				</section>
+
+
+        <section>
+					<h2>Meteor Reactive Updating</h2>
+          <img data-gifffer="assets/reactivity_test.gif" data-gifffer-duration="5600" data-gifffer-width="960" data-gifffer-height="395">
+			  </section>
+
+        <section>
+					<h2>Meteor Reactive Programming</h2>
+          <p>reactive source &middot; reactive computation</p>
+          <pre class="fragment"><code class="hljs" data-trim>
+class App extends Component {
+  ...
+}
+
+export default createContainer(() => {
+  Meteor.subscribe("tasks");
+
+  return {
+    tasks: Tasks.find({}, { sort: { createdAt: -1 } }).fetch(),
+    incompleteCount: Tasks.find({ checked: { $ne: true } }).count(),
+    currentUser: Meteor.user(),
+  };
+}, App);
+          </code></pre>
+			  </section>
+
+
+        <section>
+        <section>
+					<h2>Optimistic UI<small>(Latency compensation &middot; Dead reckoning)</small></h2>
+          <img data-src="assets/optimistic-ui-flow.png" height="55%">
+					<br/>
+					<a href="http://www.jianshu.com/p/d8ba7a0834a9"> 什么是 Meteor 的 Optimistic UI </a>
+			  </section>
+
+				<section>
+					<h2>No Optimistic UI</h2>
+					<img data-gifffer="assets/noOpti.gif" data-gifffer-duration="7000" data-gifffer-width="960" data-gifffer-height="524">
+				</section>
+
+				<section>
+					<h2>No Optimistic UI</h2>
+					<pre><code class="hljs" data-trim>
+// Insert only on server side
+if (Meteor.isServer) {
+  Meteor._sleepForMs(2000) //simulate network delay
+  insertTask()
+}
+
+// no client side insert stub
+					</code></pre>
+				</section>
+
+        <section>
+					<h2>Optimistic UI</h2>
+          <img data-gifffer="assets/optimistic.gif" data-gifffer-duration="6500" data-gifffer-width="960" data-gifffer-height="524">
+			  </section>
+
+        <section>
+					<h2>Optimistic UI</h2>
+          <pre><code class="hljs" data-trim>
+const insertTask = () => Tasks.insert( newTask )
+
+//Insert data on client & server
+if (Meteor.isServer) {
+  Meteor._sleepForMs(2000) //simulate network delay
+  insertTask()
+}
+if (Meteor.isClient) {
+  insertTask()
+}
+          </code></pre>
+			  </section>
+
+
+
+        <section>
+					<h2>Optimistic UI failed</h2>
+          <img data-gifffer="assets/failedOpti.gif" data-gifffer-duration="6300" data-gifffer-width="960" data-gifffer-height="524">
+			  </section>
+
+        <section>
+          <h2>Optimistic UI failed</h2>
+          <pre><code class="hljs" data-trim>
+// Failed to insert;
+if (Meteor.isServer) {
+  Meteor._sleepForMs(2000)
+// No insert to simulate failure
+}
+
+if (Meteor.isClient) {
+  insertTask()
+}
+          </code></pre>
+        </section>
+        </section>
+
+				<section>
+					<h2>Storybook</h2>
+					<p>Isolate your React UI Component development from the main app</p>
+          <br />
+          <a href="https://github.com/kadirahq/react-storybook">Github Repo</a>
+					&middot;
+          <a href="https://storybooks.io/">http://storybooks.io</a>
+			  </section>
+
+        <section>
+					<h1>Thank You</h1>
+					<p>Q&A</p>
+          <br />
+          <br />
+          <a href="https://github.com/leijing7/meteor1.3plus-react-demos/tree/master/simple-todos-react">例子代码地址</a>
+			  </section>
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script src="js/gifffer.min.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-55732439-5', 'auto');
+			ga('send', 'pageview');
+		</script>
+	</body>
+</html>
