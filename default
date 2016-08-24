@@ -95,10 +95,6 @@ server {
                 try_files $uri $uri/ /tr1/index12.html;
         }
 
-	location /20160326 {
-                try_files $uri $uri/ /20160326.html;
-        }
-
 	location /tr1/13 {
                 try_files $uri $uri/ /tr1/index13.html;
         }
@@ -113,6 +109,10 @@ server {
 
 	location /tr1/16 {
                 try_files $uri $uri/ /tr1/index16.html;
+        }
+
+	location /20160326 {
+                try_files $uri $uri/ /20160326.html;
         }
 
 	location /20160731 {
