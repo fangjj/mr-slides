@@ -131,9 +131,6 @@ server {
                 try_files $uri $uri/ /tr2/idx.html;
         }
 
-	location /tr2/outline {
-                try_files $uri $uri/ /tr2/outline.html;
-        }
 
 	location /rdemo {
 		try_files $uri $uri/ /demo.html;

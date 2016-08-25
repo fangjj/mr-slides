@@ -2,15 +2,11 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="viewport">
 
-		<title>Slides</title>
+		<title>Outline2</title>
 
     <style>
-      .slide {
-        padding-top: 25px;
-        padding-left: 30%
-      }
       a {
         font-size: 3em;
         color: #006284
@@ -21,27 +17,206 @@
       a:hover {
         text-decoration: underline;
       }
-			.twoCol {
-			  -moz-column-count: 2;
-				-webkit-column-count: 2;
-				column-count: 2;
-			}
-      .outline {
-        padding-top: 30px;
+			.title {
+        padding: 30px;
         text-align: center;
+				font-size: 3em;
       }
+      .button {
+          float: left;
+          background-color: teal;
+          border: none;
+          border-radius: 8px;
+          color: white;
+          padding: 10px 20px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+          margin: 4px 2px;
+          cursor: pointer;
+      }
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.shorthand {
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+
+.longhand {
+  -webkit-flex-flow: wrap row;
+  flex-flow: wrap row;
+}
+
+.flex-item {
+  background: teal;
+  padding: 10px;
+  margin: 25px;
+  flex-basis: 21%;
+
+  line-height: 50px;
+  color: white;
+  font-size: 1.5em;
+}
     </style>
 
 	</head>
 	<body>
-    <div class="outline">
-      <a href="/tr2/outline">Training &#9313 Outline</a>
+		<div class="title">
+      <a href="/" class="button">Home</a>
+      Training &#9313 Outline
     </div>
-    <div class="twoCol">
+<ul class="flex-container longhand">
+  <li class="flex-item">
+    1. 基本介绍
+      <ul>
+        <li> 课程介绍 </li>
+        <li> 学习方法 </li>
+        <li> Meteor 介绍 </li>
+      </ul>
+  </li>
+  <li class="flex-item">
+    2. JavaScript 中高级
+    <ul>
+      <li> 函数式编程 </li>
+      <li> 闭包 </li>
+      <li> ES6 </li>
+    </ul>
+  </li>
+  <li class="flex-item">
+    3. Meteor 基础
+    <ul>
+      <li> Meteor App 文件结构 </li>
+      <li> 常用 npm、Atmospherr 包 </li>
+      <li> Command 命令行</li>
+    </ul>
+  </li>
+  <li class="flex-item">
+    4. React 基础
+    <ul>
+      <li> 简单例子 <small>(例1)</small> 详解 </li>
+      <li> React 基本介绍 </li>
+      <li> JSX 语法 </li>
+      <li> 基本组件构建 </li>
+    </ul>
+  </li>
 
 
-    </div>
+  <li class="flex-item">
+    5. React 进阶 1 & MongoDB 基础
+    <ul>
+      <li> 例程详解<small> (例2) </small> </li>
+      <li> Render &middot; style  &middot; class </li>
+      <li> Event &middot; state &middot; props </li>
+      <li> MongoDB 基础 </li>
+    </ul>
+  </li>
+  <li class="flex-item">
+    6. React 进阶 2
+    <ul>
+      <li> Props 详解 </li>
+      <li> 7 个组件生命周期函数 </li>
+    </ul>
+  </li>
+  <li class="flex-item">
+    7. React 进阶 3
+    <ul>
+      <li> JSX & Dom </li>
+      <li> 组件数据管理与通信 </li>
+    </ul>
+  </li>
+  <li class="flex-item">
+    8. 路由 & UI
+    <ul>
+      <li> 路由基础介绍 </li>
+      <li> 前端框架介绍 </li>
+      <li> 相关例程解释 <small>(例3)</small></li>
+    </ul>
+  </li>
 
+
+  <li class="flex-item">
+    9. React-komposer
+    <ul>
+      <li> 前后端数据通信 </li>
+      <li> React Container </li>
+      <li> 用例详解 <small> (例4) </small> </li>
+    </ul>
+  </li>
+  <li class="flex-item">
+    10. Meteor 进阶
+    <ul>
+      <li> 账号系统 </li>
+      <li> Method、Pub/Sub </li>
+      <li> 用例详解 <small> (例5) </small> </li>
+    </ul>
+  </li>
+  <li class="flex-item">
+    11. 前端架构
+    <ul>
+      <li> Flux 单向数据流 </li>
+      <li> Mantra 介绍 </li>
+      <li> 博客例子<small> (例6) </small>代码 </li>
+    </ul>
+  </li>
+  <li class="flex-item">
+    12. Mantra
+    <ul>
+      <li> 后端架构 </li>
+      <li> Method / Publication </li>
+      <li> Mantra-cli </li>
+    </ul>
+  </li>
+
+
+  <li class="flex-item">
+    13. Web 移动端
+    <ul>
+      <li> Mantra Flow </li>
+      <li> Storybook </li>
+      <li> WeUI </li>
+      <li> Mobile 例子<small> (例7) </small> </li>
+    </ul>
+  </li>
+  <li class="flex-item">
+    14. Meteor 应用部署
+    <ul>
+      <li> settings </li>
+      <li> 部署步骤、工具 </li>
+      <li> Analytics 脚本 </li>
+    </ul>
+  </li>
+  <li class="flex-item">
+    15. CDN
+    <ul>
+      <li> CDN 介绍 </li>
+      <li> 部署步骤 </li>
+      <li> 首屏优化 </li>
+    </ul>
+  </li>
+  <li class="flex-item">
+    16. 性能优化
+    <ul>
+      <li> Scaling 介绍 </li>
+      <li> Cluster solution </li>
+      <li> MongoDB 在 Meteor 内的优化 </li>
+    </ul>
+  </li>
+</ul>
 
 		<script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
