@@ -95,7 +95,7 @@
 
         <section>
 					<h2>Meteor ?</h2>
-          <p> Full-stack JavaScript framework for web & mobile</p>
+          <p class="fragment"> Full-stack JavaScript framework for web & mobile</p>
 					<div class="fragment">
 	          <img src="assets/js.png" class="logoImg">
 	          <img src="assets/nodejs.png" class="logoImg">
@@ -139,8 +139,10 @@
 				<section>
         <section>
 					<h2>Frontend</h2>
-          <img src="assets/angular_react.png" width="60%">
-          <p>Blaze &middot; Angular &middot; React</p>
+					<div class="fragment">
+	          <img src="assets/angular_react.png" width="60%">
+	          <p>Blaze &middot; Angular &middot; React</p>
+					</div>
 			  </section>
 
 				<section>
@@ -241,31 +243,39 @@ console.log(b) // 输出 12
 			  </section>
 
 				<section>
-					<h2><span class="remindColor">异步</span>自动更新</h2>
-					<span class="fragment"><=</span>
+					<h2> UI ?</h2>
+					<span class="fragment">交互天生异步</span>
 					<pre class="fragment"><code class="hljs" data-trim>
 let a = 1;
-let b <= a + 1; // 永久联系
-console.log(b) // 输出 2
+let b = function(){
+  return a + 1;
+};
+...
+<p> b = { b } </p> //显示 b = 2
+...
 a = 11;
-console.log(b) // 输出 12
+...
+<p> b = { b } </p> //显示 b = 12
+...
 					</code></pre>
+					<span class="fragment">如果在 a=11 之后所有 b 更新显示为 12，这就是异步</span>
 				</section>
 
 				<section>
-					<h2> <span class="remindColor"> UI 异步</span>自动更新</h2>
+					<h2> UI <span class="remindColor"> 异步</span>自动更新</h2>
+					<span class="fragment"><=</span>
 					<pre class="fragment"><code class="hljs" data-trim>
 let a = 1;
 let b <= a + 1; // 永久关系
 ...
-<p> b = { b } </p> //开始是2， 再 a=11 之后自动更新显示为 12，这就是异步
+<p> b = { b } </p> //开始是2， 在 a=11 之后自动更新显示为 12
 ...
 a = 11;
 ...
 <p> b = { b } </p> //12
 ...
 					</code></pre>
-					<span class="fragment">Reactive Programming 反应式编程</span>
+					<span class="fragment">Reactive Programming 反应式编程 - 异步自动更新</span>
 				</section>
 
 
