@@ -127,6 +127,16 @@ server {
                 try_files $uri $uri/ /tr1/idx.html;
         }
 
+
+
+	location /tr2/1 {
+                try_files $uri $uri/ /tr2/index1.html;
+        }
+
+	location /tr2/2 {
+                try_files $uri $uri/ /tr2/index2.html;
+        }
+
 	location /tr2/idx {
                 try_files $uri $uri/ /tr2/idx.html;
         }
