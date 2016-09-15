@@ -62,13 +62,28 @@ n; // { x: 1, y: 2, a: 3, b: 4 }
         </section>
 
 				<section>
-					<h2>METEOR Event LOOP</h2>
+					<h2>JavaScript Runtime</h2>
+					<br />
+					Single Thread
+					<br />
+					<br />
+          <ul>
+            <li>Browser - Manipulate DOM and Fetch Data</li>
+            <li>Node.js - Business Logic and Database </li>
+          </ul>
+					<br />
+					<br />
+					<span class="fragment"> HTML5 web worker - child thread (worker) can not manipulate DOM </span>
+			  </section>
+
+				<section>
+					<h2>Event Loop</h2>
+					<p><a href="http://www.ruanyifeng.com/blog/2014/10/event-loop.html">JavaScript 运行机制详解</a></p>
 					<ul>
-            <li>Based on Node.js</li>
-            <li>Node.js is single thread</li>
+            <li>Meteor is based on Node.js</li>
             <li>Event loop / Event-driven programming</li>
-            <li>I/O (network disk)，asynchronous 异步编程</li>
-            <li>Fiber</li>
+            <li>I/O (network / disk)，asynchronous 异步编程</li>
+            <li><a href="https://meteorhacks.com/fibers-eventloop-and-meteor/"> Fiber </a> - Coroutine</li>
             <li>Callback, promise, fiber and generator</li>
           </ul>
 			  </section>
@@ -132,7 +147,8 @@ server/
             <li>programs: 历史遗留问题</li>
           </ul>
 
-          <p> 其他名字的文件夹、文件前后端都加载，除了 css，html 是在前端加载</p>
+          <p> 除了 css，html 是在前端加载, 其他名字的文件夹、文件前后端都加载</p>
+          <p class="fragment" style="color: yellow"> 敏感信息使用配置文件并且 .gitignore </p>
         </section>
 
         <section>
@@ -229,12 +245,15 @@ const handle = Meteor.subscribe('lists.public')
         <section>
           <h2>built-in tools</h2>
           <ul>
-            <li><a href="http://www.css88.com/doc/underscore/"> underscore </a></li>
+            <li><a href="http://www.css88.com/doc/underscore/"> underscore </a>(unfortunately not lodash)</li>
             <li><a href="http://docs.meteor.com/packages/random.html"> random </a></li>
             <li> jquery </li>
             <li> <a href="http://docs.meteor.com/api/check.html"> check </a> </li>
             <li> <a href="http://docs.meteor.com/api/session.html"> Session </a> </li>
             <li> ReactiveVar / ReactiveDict </li>
+						<br/>
+						Because of Fiber:
+						<br/>
             <li> Meteor.setTimeout / Meteor.clearTimeout </li>
             <li> Meteor.setInterval / Meteor.clearInterval </li>
             ...
