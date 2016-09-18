@@ -84,35 +84,44 @@ meteor remove autopublish
         <section>
 					<h2>测试</h2>
 
+					1. demo
           <pre><code class="hljs" data-trim>
 meteor add practicalmeteor:mocha
 
 meteor test --driver-package practicalmeteor:mocha //运行
 					</code></pre>
-					测试 methods
+					2. 测试 methods 代码
+					<br/>
+					<br/>
+					<a href="http://www.yinwang.org/blog-cn/2016/09/14/tests" class="fragment">测试的道理</a>
 			  </section>
 
         <section>
           <h2>表达式和申明</h2>
           <p> expression vs. statement in JavaScript</p>
 
+					<div class="fragment">
           expression 代表一个值
           <pre><code class="hljs" data-trim>
 ReactDOM.render(&lt;div id={condition ? 'msg' : null}>Hello &lt;/div>, mountNode);
           </code></pre>
+					<div>
 
+					<div class="fragment">
           statement 代表动作，例如循环，if 语句
           <pre><code class="hljs" data-trim>
 &lt;div id={if (condition) { 'msg' }}>Hello &lt;/div> //行不通
           </code></pre>
-
+					</div>
           <br/>
 
-          <p>JSX 只能使用 expression</p>
+          <div class="fragment">
+						<p>JSX 只能使用 expression</p>
+					</div>
         </section>
 
         <section>
-					<h2>if else</h2>
+					<h2>if else in render()</h2>
 
           <pre><code class="hljs" data-trim>
 let loginButton;
@@ -133,7 +142,7 @@ return (
 			  </section>
 
         <section>
-					<h2>FFIE</h2>
+					<h2>IIFE</h2>
           Immediately-Invoked Function Expressions
           <pre><code class="hljs" data-trim>
 return (
@@ -234,15 +243,15 @@ let ComponentWithDefaultProps = React.createClass({
           <pre><code class="hljs" data-trim>
 var CheckLink = React.createClass({
   render: function() {
-    // 所有 CheckLink 的 props 值赋给 <a>
-    return &lt;a {...this.props}> {'√ '}{this.props.children} </a>;
+    // 所有 CheckLink 的 props 值赋给 Comp 组件
+    return &lt;Comp {...this.props}> {this.props.children} &lt;/Comp&gt;
   }
 });
 
 ReactDOM.render(
-  <CheckLink href="/checked.html">
+  &lt;CheckLink href="/checked.html"&gt;
     Click here!
-  </CheckLink>,
+  &lt;/CheckLink&gt;,
   document.getElementById('example')
 );
 					</code></pre>
@@ -386,6 +395,15 @@ const HelloMessage = ({name}) => <div>Hello {name}</div>;
 
 ReactDOM.render(&lt;HelloMessage name="Sebastian" />, mountNode);
           </code></pre>
+        </section>
+
+				<section>
+          <h2>Homework</h2>
+					<ol>
+            <li>添加动态获取 window 高度的显示组件</li>
+            <li>利用 React 生命周期函数探测 window 在变高时候，高度数字显示为红色，变矮时候显示绿色</li>
+          <ol>
+
         </section>
 
 			</div>

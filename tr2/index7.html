@@ -1,0 +1,190 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>柒</title>
+
+		<link rel="stylesheet" href="../css/reveal.css">
+		<link rel="stylesheet" href="../css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<style>
+      a:link {
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section>
+					<h1> 柒 </h1>
+					<h1>React 进阶 - 3</h1>
+					<p>
+						<small>Created by <a href="http://jinglei.me"> &nbsp; 荆雷 &nbsp; </a> in Sept 2016</small>
+					</p>
+
+          <a href="http://chuansong.me/n/458679551457">React.js 初学者应该知道的 9 件事</a>
+			  </section>
+
+        <section>
+          <h2>JSX Style Guide</h2>
+          <p><a href="https://github.com/airbnb/javascript/tree/master/react"> Airbnb React/JSX Style Guide (English) </a></p>
+          <p><a href="https://github.com/JasonBoy/javascript/tree/master/react"> Airbnb React/JSX 编码规范（中文版） </a></p>
+          <ul>
+            <li>每个文件只写一个模块</li>
+            <li>但是多个无状态模块可以放在单个文件中</li>
+            <li>如果你的模块有内部状态或者是refs, 推荐使用 class extends React.Component</li>
+            <li>没有状态或是没有引用refs， 推荐使用普通函数（非箭头函数）</li>
+          <ul>
+        </section>
+
+        <section>
+					<h2>DOM</h2>
+          Attach DOM Event Listener
+          <pre><code class="hljs" data-trim>
+componentDidMount() {
+  window.addEventListener('resize', this.handleResize);
+}
+
+componentWillUnmount() {
+  window.removeEventListener('resize', this.handleResize);
+}
+          </code></pre>
+			  </section>
+
+        <section>
+          <h2>DOM Updating</h2>
+          <pre><code class="hljs" data-trim>
+this.setState() //会调用 shouldComponentUpdate() 决定是否 re render
+
+shouldComponentUpdate() //默认返回 true，re render，甚至 state 没有改变
+          </code></pre>
+          <br/>
+          1. Virtual DOM: re render，因为 React 不会自己去比较 state
+          <br/>
+          <br/>
+          2. Real DOM: React 负责在有更新时才 render 更新的部分
+        </section>
+
+        <section>
+					<h2>TOOL</h2>
+          <a href="https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en">React dev tool (Chrome  Firefox)</a>
+			  </section>
+
+        <section>
+					<h2>组件写法</h2>
+          <pre><code class="hljs" data-trim>
+const MyComponent = React.createClass({
+  render: function() {
+    return &lt;div className={this.props.className}/>;
+  }
+});
+          </code></pre>
+          <pre><code class="hljs" data-trim>
+class MyComponent extends React.Component { // ES6
+  render() {
+    return &lt;div className={this.props.className}/>;
+  }
+}
+          </code></pre>
+
+          函数式写法
+          <pre><code class="hljs" data-trim>
+const MyComponent = props => ( //v0.14+; no ref, state
+  &lt;div className={props.className}/>
+);
+          </code></pre>
+			  </section>
+
+        <section>
+          <h2>key</h2>
+          唯一标识符，diff 算法需要
+          <pre><code class="hljs" data-trim>
+&lt;Task
+  key={task._id}
+  task={task}
+  showPrivateButton={showPrivateButton}
+/>
+          </code></pre>
+        </section>
+
+        <section>
+          <h2>组件数据</h2>
+          props &middot; state &middot; instance
+          <pre><code class="hljs" data-trim>
+this.anInstanceVariable // 例子 this.clickedTitleCount
+          </code></pre>
+        </section>
+
+        <section>
+					<h2>Communication - 1</h2>
+          Parent to child -> pass props
+			  </section>
+
+        <section>
+					<h2>Communication - 2</h2>
+          <p>Child to parent, 暴露子组件的函数给父组件</p>
+          <a href="https://github.com/leijing7/meteor1.3plus-react-demos"> 见例子 simple-todos-react 任务点击显示 </a>
+			  </section>
+
+        <section>
+					<h2>Communication - 3</h2>
+          <p>non-parent-child</p>
+          <ul>
+            <li>Global: Session</li>
+            <li>miniMongo</li>
+            <li>ReactiveVar / ReactiveDict</li>
+            <li>MongoDB</li>
+            <li>Flux, Redux</li>
+          <ul>
+			  </section>
+
+			</div>
+		</div>
+
+		<script src="../lib/js/head.min.js"></script>
+		<script src="../js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../plugin/markdown/marked.js' },
+					{ src: '../plugin/markdown/markdown.js' },
+					{ src: '../plugin/notes/notes.js', async: true },
+					{ src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-55732439-5', 'auto');
+			ga('send', 'pageview');
+		</script>
+	</body>
+</html>

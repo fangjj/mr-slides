@@ -50,6 +50,8 @@
 
 &lt;div className="container"> //HTML 里的 class 改为 className
 				  </code></pre>
+
+					<p class="fragment"> React vs. ReactDOM </p>
 			  </section>
 
 				<section>
@@ -66,12 +68,13 @@
 					<h2>Style</h2>
 					<ul>
             <li>传统的 CSS 继续可用</li>
-            <li>JSX 引入了 inline style 对象</li>
+            <li>JSX - style 对象</li>
+            <li>JSX - inline style 对象</li>
           </ul>
 			  </section>
 
 				<section>
-					<h2>class</h2>
+					<h2>className</h2>
 <a href="https://github.com/JedWatson/classnames">这个包解决 JSX 的 className 拼接的问题</a>
 					<pre><code class="hljs" data-trim>
 meteor npm install --save classnames
@@ -100,42 +103,35 @@ onSubmit={this.handleSubmit.bind(this)}
 
 				<section>
 					<h2>props vs. state</h2>
-					<p>何时使用？</p>
 					<ul>
-            <li>共同的 owner（追溯）里使用 state</li>
-            <li>没有的话创建一个，类似 container</li>
+						Common
+            <li>JS objects</li>
+            <li>Triger render update</li>
           </ul>
-			  </section>
-
-				<section>
-					<h2>data</h2>
-					永远不要去修改 props；修改 state
 			  </section>
 
 				<section>
 					<h2>props vs. state</h2>
 					<ul>
-            <li>Owner-ownee 关系</li>
-            <li>Parent-child 关系</li>
+						Difference
+            <li>Props -  immutable configuration / function</li>
+            <li>State - mutated by events</li>
           </ul>
-					<pre><code class="hljs" data-trim>
-render() {
-  return (
-    <div>
-      <header>
-        <h1>Click below button to try reactive programming 相应式编程</h1>
-      </header>
-
-      <button onClick={this.btnClicked.bind(this)}> Click </button>
-
-      &lt;CountContainer /> {/* 点击次数组件 */}
-    </div>
-  );
-}
-				  </code></pre>
-
-					todos inComplete / count 例子
+					<br />
+					<br />
+					<br />
+					<a href="https://github.com/uberVU/react-guide/blob/master/props-vs-state.md">props vs state</a>
 			  </section>
+
+				<section>
+					<h2>data</h2>
+					永远不要在组件里修改 prop
+					<br />
+					<br />
+					修改 state (private member)
+			  </section>
+
+
 
 				<section>
 					<h2>数据存储</h2>
@@ -189,7 +185,7 @@ render() {
 					<ul>
             <li>Create - Collection.insert()</li>
             <li>Read - Collection.find() / Collection.findOne()</li>
-            <li>Update - Collection.update()</li>
+            <li>Update - Collection.update() / Collection.upsert()</li>
             <li>Delete - Collection.remove()</li>
           </ul>
 					<br/>
