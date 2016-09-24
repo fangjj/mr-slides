@@ -123,6 +123,10 @@ server {
                 try_files $uri $uri/ /20160828.html;
         }
 
+	location /20160924 {
+								try_files $uri $uri/ /20160924.html;
+				}
+
 	location /tr1/idx {
                 try_files $uri $uri/ /tr1/idx.html;
         }
