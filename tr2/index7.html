@@ -76,11 +76,11 @@ this.setState() //会调用 shouldComponentUpdate() 决定是否 re render
 
 shouldComponentUpdate() //默认返回 true，re render，甚至 state 没有改变
           </code></pre>
-          <br/>
-          1. Virtual DOM: re render，因为 React 不会自己去比较 state
-          <br/>
-          <br/>
-          2. Real DOM: React 负责在有更新时才 render 更新的部分
+
+					<ol>
+            <li>Virtual DOM: rerender，因为 React 不会自己去比较 state</li>
+            <li>Real DOM: React 在有更新时才 render 更新的部分</li>
+					</ol>
         </section>
 
         <section>
