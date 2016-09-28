@@ -165,6 +165,14 @@ server {
 								try_files $uri $uri/ /tr2/index8.html;
 				}
 
+	location /tr2/9 {
+		try_files $uri $uri/ /tr2/index9.html;
+	}
+
+	location /tr2/10 {
+	  try_files $uri $uri/ /tr2/index10.html;
+	}
+
 	location /tr2/idx {
                 try_files $uri $uri/ /tr2/idx.html;
         }
