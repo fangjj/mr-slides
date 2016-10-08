@@ -37,13 +37,12 @@
 					<h1> 十一 </h1>
 					<h1>前端架构</h1>
 					<p>
-						<small>Created by <a href="http://jinglei.me"> &nbsp; 荆雷 &nbsp; </a> in August 2016</small>
+						<small>Created by <a href="http://jinglei.me"> &nbsp; 荆雷 &nbsp; </a> in Oct 2016</small>
 					</p>
 			  </section>
 
         <section>
 					<h2>Flux</h2>
-          <p>一种模式而不是框架</p>
           <ul>
             <li>只涉及前端</li>
             <li>单向数据流 unidirectional data flow</li>
@@ -86,37 +85,14 @@
           <ul>
 			  </section>
 
-        <section>
-          <h2>Meteor as Flux</h2>
-          <img data-src="../assets/mrf.svg">
-          Controller-View &asymp; Model-View-Controller
-        </section>
-
 				<section>
           <h2>Redux</h2>
           <img data-src="http://image.slidesharecdn.com/reactreduxintroduction-151124165017-lva1-app6891/95/react-redux-introduction-33-638.jpg?cb=1448383914">
         </section>
 
 				<section>
-          <h2>npm</h2>
-					<pre><code class="hljs" data-trim>
-// 记得使用 meteor 的 npm 安装，而不是直接使用本地 npm，避免版本冲突
-// i 为 install 的简写
-// 尽量使用 Meteor 1.4+
-meteor npm i
-
-// 检查你的node npm 版本号, 尽量使用 npm v3+
-npm -v
-meteor npm -v
-node -v
-meteor node -v
-
-//meteor 版本号, 包的版本号
-meteor --version
-
-//meteor 包的版本号
-meteor list
-					</code></pre>
+					<h2>Meteor Data Flow</h2>
+          <img data-src="../assets/mantra_flow.svg">
         </section>
 
 				<section>
@@ -179,7 +155,7 @@ meteor list
 
 				<section>
           <h2>Actions 函数</h2>
-					<p>处理业务逻辑的。包括验证，状态管理和远程数据交互</p>
+					<p>处理业务逻辑 - 包括验证，状态管理和远程数据交互</p>
 					<ul>
 						<li> 第一个参数必须是应用的上下文 Context </li>
 						<li> 不得使用引入除了参数以外的任何变量和模块，甚至全局变量，但是可以使用库函数 </li>
@@ -227,7 +203,7 @@ meteor list
 
 				<section>
           <h2>Routing</h2>
-					可能每个 modules 都可能有一个 routes.js
+					每个 modules 都可能有一个 routes.js
         </section>
 
 				<section>
@@ -257,7 +233,7 @@ meteor list
 				<section>
           <h2>modules</h2>
 					<p>模块化结构, 不是指 ES6 模块。只有一层，无子模块</p>
-					<p>core 核心模块为例</p>
+					<p>下面以 core 核心模块为例</p>
 					<ul>
 						<li> core routes </li>
 						<li> 应用配置 </li>

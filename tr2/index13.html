@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>十三</title>
+
+		<link rel="stylesheet" href="../css/reveal.css">
+		<link rel="stylesheet" href="../css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<style>
+      a:link {
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section>
+					<h1> 十三 </h1>
+					<h1>Web 移动端</h1>
+					<p>
+						<small>Created by <a href="http://jinglei.me"> &nbsp; 荆雷 &nbsp; </a> in Oct 2016</small>
+					</p>
+			  </section>
+
+        <section>
+					<h2>Storybook</h2>
+          <p><a href="https://github.com/kadirahq/react-storybook">Github repo</a></p>
+          <p>目前不能适合移动界面</p>
+          <p>演示</p>
+			  </section>
+
+        <section>
+					<h2>WeUI</h2>
+          <p><a href="https://github.com/weui/weui">WeUI repo</a></p>
+          <ul>
+            <li>微信原生视觉体验一致</li>
+            <li>微信 Web 开发量身设计</li>
+            <li>感知更加统一</li>
+            <li><a href="https://weui.io/#/">在线预览</a></li>
+            <li><a href="https://github.com/weui/weui/wiki">文档</a></li>
+          <ul>
+			  </section>
+
+        <section>
+          <h2>UI 设计</h2>
+          <p><a href="http://jinglei.me/she-ji-you-ya-ui-de-7-tiao-zhun-ze/"> 设计优雅 UI 的 7 条准则 </a></p>
+          <p><a href="http://jinglei.me/zhong-wen-zi-ti/"> 中文字体 </a></p>
+          <p><a href="https://www.zhihu.com/question/20727176"> 有哪些值得推荐的中文字体？</a></p>
+					<br/>
+        </section>
+
+        <section>
+					<h2>WeUI 安装</h2>
+          <p>例子文档</p>
+			  </section>
+
+        <section>
+					<h2>img src</h2>
+          <p>新加图片有时需要重新运行 meteor</p>
+			  </section>
+
+        <section>
+					<h2>tabbar</h2>
+          <p>导航区建议不超过 5 个</p>
+          <p>图标 .weui_tabbar_icon 约定尺寸为 24px * 24px </p>
+			  </section>
+
+        <section>
+					<h2>toast</h2>
+          <p>只显示加载和成功</p>
+          <p>失败用 alert</p>
+          <p>注册成功 vs 注册完成？</p>
+			  </section>
+
+        <section>
+					<h2>mobile web demo</h2>
+          <p>代码</p>
+			  </section>
+			</div>
+		</div>
+
+		<script src="../lib/js/head.min.js"></script>
+		<script src="../js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../plugin/markdown/marked.js' },
+					{ src: '../plugin/markdown/markdown.js' },
+					{ src: '../plugin/notes/notes.js', async: true },
+					{ src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-55732439-5', 'auto');
+			ga('send', 'pageview');
+		</script>
+	</body>
+</html>
