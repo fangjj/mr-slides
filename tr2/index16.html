@@ -43,7 +43,7 @@
 
         <section>
 					<h2>性能 / Scalability </h2>
-          <p>伪命题</p>
+          <p>不用太早担心这个问题</p>
           <p>Product/market fit</p>
           <a href="http://coolshell.cn/articles/17381.html"> 性能测试应该怎么做 </a>
 			  </section>
@@ -56,21 +56,26 @@
         </section>
 
         <section>
-          <h2>Scaling</h2>
+          <h2>Scaling Directions</h2>
           <ul>
             <li>Vertical
               <ul>
                 <li>
                   <a href="http://highscalability.com/blog/2014/7/21/stackoverflow-update-560m-pageviews-a-month-25-servers-and-i.html">
-                  stackoverflow - 19m pageview/day
+                  stackoverflow - 19m pv/day (2014, No.54)
                   </a>
                 </li>
                 <li>25 server</li>
                 <li>384GB RAM for each SQL server</li>
+                <li>2TB SSD </li>
                 <li>16 GB RAM for web server</li>
               </ul>
             </li>
             <li>Horizontal</li>
+							<ul>
+								<li>Large peak loads</li>
+							</ul>
+						</li>
           <ul>
         </section>
 
@@ -82,7 +87,7 @@
                 <li> meteorhacks:cluster </li>
                 <li> Nginx </li>
                 <li> HAProxy </li>
-                <li> sticky session？ </li>
+                <li> (sticky session) </li>
               </ul>
             </li>
             <li>Service discovery</li>
@@ -108,9 +113,10 @@ export CLUSTER_SERVICE=web
         <section>
 					<h2>数据库</h2>
           <ul>
+            <li> bottleneck </li>
             <li> 读 &middot; 写 </li>
             <li> DDP 数据发布量 </li>
-            <li> Query reusable？unique？Meteor de-duplicates  </li>
+            <li> Query reusable？unique？</li>
             <li> Meteor de-duplicates identical queries automatically </li>
             <li> Login？ </li>
           </ul>
@@ -171,7 +177,7 @@ Meteor.startup(function () {
 			  </section>
 
         <section>
-          <h2>利用 mongo 计算提高效率（流量）</h2>
+          <h2>利用 mongo 计算提高效率</h2>
           <p><a href="https://docs.mongodb.com/manual/aggregation/">aggregations</a></p>
           <p><a href=" https://github.com/percolatestudio/publish-counts/"> publish-counts</a></p>
           <pre><code class="hljs" data-trim>
