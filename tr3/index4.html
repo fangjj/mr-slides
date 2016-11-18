@@ -1,0 +1,162 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>肆</title>
+
+		<link rel="stylesheet" href="../css/reveal.css">
+		<link rel="stylesheet" href="../css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<style>
+      a:link {
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section>
+					<h1> 肆 </h1>
+					<h1>React 基础</h1>
+					<p>
+						<small>Created by <a href="http://jinglei.me"> &nbsp; 荆雷 &nbsp; </a> in Nov 2016</small>
+					</p>
+			  </section>
+
+				<section>
+					<h2>Introduction</h2>
+					<ul>
+						<li>职责: V in MVC</li>
+						<li>目的: 创建能适应变化的大型应用; 复用 UI 组件</li>
+						<li>作用: 让 UI 随着数据的 <span style="color:yellow">变化</span> 而异步自动更新</li>
+						<ul>
+              <li>Declarative 声明式 (Angular Imperative 命令式)</li>
+              <pre><code class="hljs" data-trim>
+&lt;SubmitButton> Submit &lt;/SubmitButton> //声明式
+
+addSubmitButton(); //命令式
+              </code></pre>
+              <li>Reactive <a href="https://facebook.github.io/react/contributing/design-principles.html#scheduling">(Schedule)</a></li>
+            </ul>
+				</section>
+				<section>
+					<h2>Introduction</h2>
+					<ul>
+            <li>组件封装</li>
+            <li>生态: React Native / Open source components</li>
+            <li>Learn once, write everywhere <strike>write once, run everywhere</strike></li>
+            <li>Virtual DOM</li>
+					</ul>
+			  </section>
+
+				<section>
+					<h2>Demo</h2>
+					<a href="https://github.com/leijing7/meteor1.3plus-react-demos/tree/master/simple">一个简单例子源代码</a>
+				</section>
+
+        <section>
+					<h2>组件既函数</h2>
+					Component == Function( props)
+        </section>
+
+        <section>
+					<h2>JSX (optional)</h2>
+          JSX lets you create JavaScript objects using HTML syntax
+          <pre><code class="hljs" data-trim>
+//JSX(在 .jsx 文件里, Meteor1.4 可以在 js 文件里), using HTML syntax
+<a href="https://github.com/">Hello!</a>
+
+//Pure JavaScript
+React.createElement('a', {href: 'https://github.com/'}, 'Hello!')
+          </code></pre>
+
+          JSX 语法更像是 XML
+        </section>
+
+        <section>
+          <h2>JSX 注释</h2>
+          <pre><code class="hljs" data-trim>
+var content = (
+  <Nav>
+    {/* child comment, put {} around */}
+    &lt;Person
+      /* multi
+         line
+         comment */
+      name={window.isLoggedIn ? window.name : ''} // end of line comment
+    /&gt;
+  </Nav>
+);
+          </code></pre>
+        </section>
+
+				<section>
+          <h2>JSX 属性表达式</h2>
+          <pre><code class="hljs" data-trim>
+&lt;input type="button" disabled={true} /&gt;
+
+var person = &lt;Person name={window.isLoggedIn ? window.name : ''} /&gt;
+
+var props = {};
+props.foo = x;
+props.bar = y;
+var component = &lt;Component {...props} /&gt; //ES6 spread 属性
+          </code></pre>
+        </section>
+
+				<section>
+					<h2>Homework</h2>
+					<p>1. <a href="https://tutor.mantrajs.com/say-hello-to-ES2015/introduction"> ES6 Practice </a></p>
+					<p>2. 下载例子程序 simple 并添加一个倍乘按钮</p>
+        </section>
+
+			</div>
+		</div>
+
+		<script src="../lib/js/head.min.js"></script>
+		<script src="../js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../plugin/markdown/marked.js' },
+					{ src: '../plugin/markdown/markdown.js' },
+					{ src: '../plugin/notes/notes.js', async: true },
+					{ src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-55732439-5', 'auto');
+			ga('send', 'pageview');
+		</script>
+	</body>
+</html>
