@@ -394,6 +394,7 @@ const HelloMessage = (props) => <div>Hello {props.name}</div>;
 const HelloMessage = ({name}) => <div>Hello {name}</div>;
 
 ReactDOM.render(&lt;HelloMessage name="Sebastian" />, mountNode);
+ReactDOM.render(&lt;HelloMessage name={"Sebastian"} />, mountNode);
           </code></pre>
         </section>
 
@@ -401,7 +402,7 @@ ReactDOM.render(&lt;HelloMessage name="Sebastian" />, mountNode);
           <h2>Homework</h2>
 					<ol>
             <li>添加动态获取 window 高度的显示组件</li>
-            <li>利用 React 生命周期函数探测 window 在变高时候，高度数字显示为红色，变矮时候显示绿色</li>
+            <li>利用 React 生命周期函数探测 window 在变化的时候，变高的话显示为红色，变矮显示为绿色</li>
           <ol>
 
         </section>
