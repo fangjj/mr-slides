@@ -1,0 +1,220 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>十五</title>
+
+		<link rel="stylesheet" href="../css/reveal.css">
+		<link rel="stylesheet" href="../css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="../lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? '../css/print/pdf.css' : '../css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<style>
+      a:link {
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section>
+					<h1> 十五 </h1>
+					<h1>CDN</h1>
+					<p>
+						<small>Created by <a href="http://jinglei.me"> &nbsp; 荆雷 &nbsp; </a> in Dec 2016</small>
+					</p>
+			  </section>
+
+        <section>
+          <h2>首屏</h2>
+          <p>利用 CDN 镜像大幅降低 Meteor App 的首屏加载时间</p>
+        </section>
+
+        <section>
+					<h2>Agenda</h2>
+          <ul>
+            <li> 背景介绍 </li>
+            <li> 实现
+              <ul>
+                <li> CDN 注册 </li>
+                <li> Meteor CDN 包</li>
+                <li> 部署配置 </li>
+              </ul>
+            </li>
+            <li> 总结 </li>
+          </ul>
+			  </section>
+
+        <section>
+					<h2>2 秒法则</h2>
+          <p>网站首页要在 2 秒内打开，不然用户就会流失</p>
+			  </section>
+
+        <section>
+					<h2>Meteor 的问题</h2>
+          <ul>
+            <li> css_resource + js_resource > 500KB </li>
+            <br />
+            <li> 100 Mbps 带宽也只能满足 50 人在 2 秒内打开首页 </li>
+            <br />
+            <li> 1000 人同时访问，需要 2Gbps 带宽来满足 2 秒打开 </li>
+          </ul>
+			  </section>
+
+        <section>
+					<h2> 首屏秒开解决方案 </h2>
+          <br />
+          <ol>
+            <li> 首页直出、 服务器渲染 </li>
+            <br />
+            <li> Prerender.io </li>
+            <br />
+            <li> CDN </li>
+          </ol>
+			  </section>
+
+        <section>
+					<h2>CDN</h2>
+          <ul>
+            <li> 代理缓存，利用软件和第三方服务器去缓存原始服务器的内容，从而减少了原始服务器的压力 </li>
+            <br />
+            <li> 加快访问速度，缓存服务器是分布式的，访问者访问最近的缓存服务器，这样就达到了加速的目的 </li>
+          </ul>
+			  </section>
+
+        <section>
+					<h2>CDN 分布式节点</h2>
+          <p>项目初期自己不用搭建分布式的服务器</p>
+          <br />
+					<p>阿里云CDN节点带宽没有限制，目前单节点的服务能力是40G，总处理能力为10T+</p>
+			  </section>
+
+        <section>
+					<h2>CDN 好处</h2>
+          <ol>
+            <li>经济</li>
+							<ul>
+								<li>阿里云主机流量 0.80元/GB</li>
+								<li>七牛CDN流量    0.29元/GB</li>
+							</ul>
+            <br />
+						<li>速度快（cache，就近服务器，中转少）</li>
+            <br />
+						<li>节点处理能力强</li>
+            <br />
+						<li>CDN子域名，突破浏览器对一个域名同时加载文件数目的限制</li>
+          <ol>
+			  </section>
+
+        <section>
+          <h2>实现方法</h2>
+          <ul>
+            <li>注册 CDN 服务</li>
+            <br />
+            <li>Meteor-CDN 包介绍</li>
+            <br />
+            <li>部署配置</li>
+          <ul>
+        </section>
+
+        <section>
+          <h2>CDN 服务</h2>
+          <ul>
+            <li>注册</li>
+            <br />
+            <li>创建新资源 （例子）</li>
+            <br />
+            <li>镜像存储，填写镜像源（绑定域名）</li>
+          <ul>
+        </section>
+
+        <section>
+          <img data-src="../assets/meteorcdn.png">
+        </section>
+
+        <section>
+          <h2>Meteor-CDN</h2>
+          <ul>
+            <li>meteor add nitrolabs:cdn </li>
+            <br />
+            <li>作用就是在生产环境下把打包压缩后的 css 和 js 文件的域变更到你指定的 CDN 地址，而其他 request 不变</li>
+            <br />
+            <li>服务端控制环境变量里没有 CDN_URL 的设置，那么程序就不会有任何变化；CORS</li>
+          <ul>
+        </section>
+
+        <section>
+					<h2>部署配置</h2>
+          <p>1. 运行时指定 CDN_URL 的地址</p>
+          <pre><code class="hljs" data-trim>
+export CDN_URL="http://xxxxxx.bkt.clouddn.com" && meteor
+          </code></pre>
+          <br />
+          <p>2. mupx 的配置里的 env 加上 CDN_URL</p>
+			  </section>
+
+
+        <section>
+					<h2>CDN 抓取内容</h2>
+			  </section>
+
+        <section>
+					<h2>Web Server</h2>
+          <p>    HTML / Web Socket Connection </p>
+			  </section>
+
+        <section>
+					<h2>最后注意</h2>
+          <p>其他静态资源最好都用 CDN 加速，不然会拖累加载速度</p>
+          <br />
+          <p>部署后，第一次访问仍然会很慢，因为 CDN 要先去抓取资源
+但是后面的人再访问就快了，只需要去取 cache</p>
+			  </section>
+
+		</div>
+
+		<script src="../lib/js/head.min.js"></script>
+		<script src="../js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: '../plugin/markdown/marked.js' },
+					{ src: '../plugin/markdown/markdown.js' },
+					{ src: '../plugin/notes/notes.js', async: true },
+					{ src: '../plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-55732439-5', 'auto');
+			ga('send', 'pageview');
+		</script>
+	</body>
+</html>
