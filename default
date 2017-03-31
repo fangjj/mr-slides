@@ -38,8 +38,6 @@ server {
 		# First attempt to serve request as file, then
 		# as directory, then fall back to displaying a 404.
 		try_files $uri $uri/ /tr1/index1.html;
-		# Uncomment to enable naxsi on this location
-		# include /etc/nginx/naxsi.rules
 	}
 
 	location /tr1/2 {
