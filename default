@@ -34,6 +34,16 @@ server {
 }
 
 server {
+  listen 80;
+  server_name siven.me www.siven.me resume.siven.me;
+  root /usr/share/nginx/html/siven;
+	index index.html index.htm;
+	location / {
+  	try_files $uri $uri/ =404;
+  }
+}
+
+server {
 	listen 80 default_server;
 	listen [::]:80 default_server ipv6only=on;
 
@@ -321,31 +331,6 @@ server {
 #	server_name somename alias another.alias;
 #	root html;
 #	index index.html index.htm;
-#
-#	location / {
-#		try_files $uri $uri/ =404;
-#	}
-#}
-
-
-# HTTPS server
-#
-#server {
-#	listen 443;
-#	server_name localhost;
-#
-#	root html;
-#	index index.html index.htm;
-#
-#	ssl on;
-#	ssl_certificate cert.pem;
-#	ssl_certificate_key cert.key;
-#
-#	ssl_session_timeout 5m;
-#
-#	ssl_protocols SSLv3 TLSv1 TLSv1.1 TLSv1.2;
-#	ssl_ciphers "HIGH:!aNULL:!MD5 or HIGH:!aNULL:!MD5:!3DES";
-#	ssl_prefer_server_ciphers on;
 #
 #	location / {
 #		try_files $uri $uri/ =404;
