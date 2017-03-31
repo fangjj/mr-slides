@@ -12,17 +12,7 @@ server {
       proxy_set_header X-Forwarded-Proto $scheme;
       proxy_buffering off;
   }
-}
-
-server {
-  listen 80;
-  server_name siven.me www.siven.me resume.siven.me;
-  root /usr/share/nginx/html/siven;
-	index index.html index.htm;
-	location / {
-  	try_files $uri $uri/ =404;
-  }
-}
+} 
 
 server {
 	listen 80 default_server;
@@ -31,7 +21,6 @@ server {
 	root /usr/share/nginx/html/mr-slides;
 	index index.html index.htm;
 
-	# Make site accessible from http://localhost/
 	server_name localhost;
 
 	location /tr1/1 {
